@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1025B38583006ABB06 /* GoudaApp.swift */; };
+		93E01F1325B38583006ABB06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* ContentView.swift */; };
+		93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1425B38584006ABB06 /* Assets.xcassets */; };
+		93E01F1825B38584006ABB06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1725B38584006ABB06 /* Preview Assets.xcassets */; };
+		93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1925B38584006ABB06 /* Persistence.swift */; };
+		93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */; };
+		93E01F2825B38585006ABB06 /* GoudaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F2725B38585006ABB06 /* GoudaTests.swift */; };
+		93E01F3325B38585006ABB06 /* GoudaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F3225B38585006ABB06 /* GoudaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93E01F2425B38585006ABB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E01F0525B38583006ABB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93E01F0C25B38583006ABB06;
+			remoteInfo = Gouda;
+		};
+		93E01F2F25B38585006ABB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E01F0525B38583006ABB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93E01F0C25B38583006ABB06;
+			remoteInfo = Gouda;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		93E01F0D25B38583006ABB06 /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E01F1025B38583006ABB06 /* GoudaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaApp.swift; sourceTree = "<group>"; };
+		93E01F1225B38583006ABB06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		93E01F1425B38584006ABB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93E01F1725B38584006ABB06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		93E01F1925B38584006ABB06 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		93E01F1C25B38584006ABB06 /* Gouda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gouda.xcdatamodel; sourceTree = "<group>"; };
+		93E01F1E25B38584006ABB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E01F2325B38585006ABB06 /* GoudaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoudaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E01F2725B38585006ABB06 /* GoudaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaTests.swift; sourceTree = "<group>"; };
+		93E01F2925B38585006ABB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E01F2E25B38585006ABB06 /* GoudaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoudaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E01F3225B38585006ABB06 /* GoudaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaUITests.swift; sourceTree = "<group>"; };
+		93E01F3425B38585006ABB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93E01F0A25B38583006ABB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F2025B38585006ABB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F2B25B38585006ABB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		93E01F0425B38583006ABB06 = {
+			isa = PBXGroup;
+			children = (
+				93E01F0F25B38583006ABB06 /* Gouda */,
+				93E01F2625B38585006ABB06 /* GoudaTests */,
+				93E01F3125B38585006ABB06 /* GoudaUITests */,
+				93E01F0E25B38583006ABB06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		93E01F0E25B38583006ABB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F0D25B38583006ABB06 /* Gouda.app */,
+				93E01F2325B38585006ABB06 /* GoudaTests.xctest */,
+				93E01F2E25B38585006ABB06 /* GoudaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93E01F0F25B38583006ABB06 /* Gouda */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F1025B38583006ABB06 /* GoudaApp.swift */,
+				93E01F1225B38583006ABB06 /* ContentView.swift */,
+				93E01F1425B38584006ABB06 /* Assets.xcassets */,
+				93E01F1925B38584006ABB06 /* Persistence.swift */,
+				93E01F1E25B38584006ABB06 /* Info.plist */,
+				93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */,
+				93E01F1625B38584006ABB06 /* Preview Content */,
+			);
+			path = Gouda;
+			sourceTree = "<group>";
+		};
+		93E01F1625B38584006ABB06 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F1725B38584006ABB06 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		93E01F2625B38585006ABB06 /* GoudaTests */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F2725B38585006ABB06 /* GoudaTests.swift */,
+				93E01F2925B38585006ABB06 /* Info.plist */,
+			);
+			path = GoudaTests;
+			sourceTree = "<group>";
+		};
+		93E01F3125B38585006ABB06 /* GoudaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F3225B38585006ABB06 /* GoudaUITests.swift */,
+				93E01F3425B38585006ABB06 /* Info.plist */,
+			);
+			path = GoudaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93E01F0C25B38583006ABB06 /* Gouda */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E01F3725B38585006ABB06 /* Build configuration list for PBXNativeTarget "Gouda" */;
+			buildPhases = (
+				93E01F0925B38583006ABB06 /* Sources */,
+				93E01F0A25B38583006ABB06 /* Frameworks */,
+				93E01F0B25B38583006ABB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gouda;
+			productName = Gouda;
+			productReference = 93E01F0D25B38583006ABB06 /* Gouda.app */;
+			productType = "com.apple.product-type.application";
+		};
+		93E01F2225B38585006ABB06 /* GoudaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E01F3A25B38585006ABB06 /* Build configuration list for PBXNativeTarget "GoudaTests" */;
+			buildPhases = (
+				93E01F1F25B38585006ABB06 /* Sources */,
+				93E01F2025B38585006ABB06 /* Frameworks */,
+				93E01F2125B38585006ABB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93E01F2525B38585006ABB06 /* PBXTargetDependency */,
+			);
+			name = GoudaTests;
+			productName = GoudaTests;
+			productReference = 93E01F2325B38585006ABB06 /* GoudaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		93E01F2D25B38585006ABB06 /* GoudaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E01F3D25B38585006ABB06 /* Build configuration list for PBXNativeTarget "GoudaUITests" */;
+			buildPhases = (
+				93E01F2A25B38585006ABB06 /* Sources */,
+				93E01F2B25B38585006ABB06 /* Frameworks */,
+				93E01F2C25B38585006ABB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				93E01F3025B38585006ABB06 /* PBXTargetDependency */,
+			);
+			name = GoudaUITests;
+			productName = GoudaUITests;
+			productReference = 93E01F2E25B38585006ABB06 /* GoudaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93E01F0525B38583006ABB06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					93E01F0C25B38583006ABB06 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					93E01F2225B38585006ABB06 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 93E01F0C25B38583006ABB06;
+					};
+					93E01F2D25B38585006ABB06 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 93E01F0C25B38583006ABB06;
+					};
+				};
+			};
+			buildConfigurationList = 93E01F0825B38583006ABB06 /* Build configuration list for PBXProject "Gouda" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93E01F0425B38583006ABB06;
+			productRefGroup = 93E01F0E25B38583006ABB06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93E01F0C25B38583006ABB06 /* Gouda */,
+				93E01F2225B38585006ABB06 /* GoudaTests */,
+				93E01F2D25B38585006ABB06 /* GoudaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93E01F0B25B38583006ABB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E01F1825B38584006ABB06 /* Preview Assets.xcassets in Resources */,
+				93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F2125B38585006ABB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F2C25B38585006ABB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93E01F0925B38583006ABB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
+				93E01F1325B38583006ABB06 /* ContentView.swift in Sources */,
+				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
+				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F1F25B38585006ABB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E01F2825B38585006ABB06 /* GoudaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E01F2A25B38585006ABB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E01F3325B38585006ABB06 /* GoudaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93E01F2525B38585006ABB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93E01F0C25B38583006ABB06 /* Gouda */;
+			targetProxy = 93E01F2425B38585006ABB06 /* PBXContainerItemProxy */;
+		};
+		93E01F3025B38585006ABB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93E01F0C25B38583006ABB06 /* Gouda */;
+			targetProxy = 93E01F2F25B38585006ABB06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		93E01F3525B38585006ABB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93E01F3625B38585006ABB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93E01F3825B38585006ABB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gouda/Preview Content\"";
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gouda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.Gouda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93E01F3925B38585006ABB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Gouda/Preview Content\"";
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Gouda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.Gouda;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		93E01F3B25B38585006ABB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				INFOPLIST_FILE = GoudaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.GoudaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gouda.app/Gouda";
+			};
+			name = Debug;
+		};
+		93E01F3C25B38585006ABB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				INFOPLIST_FILE = GoudaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.GoudaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gouda.app/Gouda";
+			};
+			name = Release;
+		};
+		93E01F3E25B38585006ABB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				INFOPLIST_FILE = GoudaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.GoudaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gouda;
+			};
+			name = Debug;
+		};
+		93E01F3F25B38585006ABB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6SRVK6QLTD;
+				INFOPLIST_FILE = GoudaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.GoudaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Gouda;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93E01F0825B38583006ABB06 /* Build configuration list for PBXProject "Gouda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E01F3525B38585006ABB06 /* Debug */,
+				93E01F3625B38585006ABB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E01F3725B38585006ABB06 /* Build configuration list for PBXNativeTarget "Gouda" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E01F3825B38585006ABB06 /* Debug */,
+				93E01F3925B38585006ABB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E01F3A25B38585006ABB06 /* Build configuration list for PBXNativeTarget "GoudaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E01F3B25B38585006ABB06 /* Debug */,
+				93E01F3C25B38585006ABB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E01F3D25B38585006ABB06 /* Build configuration list for PBXNativeTarget "GoudaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E01F3E25B38585006ABB06 /* Debug */,
+				93E01F3F25B38585006ABB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				93E01F1C25B38584006ABB06 /* Gouda.xcdatamodel */,
+			);
+			currentVersion = 93E01F1C25B38584006ABB06 /* Gouda.xcdatamodel */;
+			path = Gouda.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 93E01F0525B38583006ABB06 /* Project object */;
+}
