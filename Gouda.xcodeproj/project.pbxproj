@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */; };
 		93E01F2825B38585006ABB06 /* GoudaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F2725B38585006ABB06 /* GoudaTests.swift */; };
 		93E01F3325B38585006ABB06 /* GoudaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F3225B38585006ABB06 /* GoudaUITests.swift */; };
+		93E01F4825B3A950006ABB06 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 93E01F4725B3A950006ABB06 /* Networking */; };
+		93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5025B3AE3A006ABB06 /* Hopper.xcdatamodeld */; };
+		93E01F5725B3AE4F006ABB06 /* HopperPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5625B3AE4F006ABB06 /* HopperPersistence.swift */; };
+		93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5C25B3AE94006ABB06 /* GoudaState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 		93E01F2E25B38585006ABB06 /* GoudaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoudaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E01F3225B38585006ABB06 /* GoudaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaUITests.swift; sourceTree = "<group>"; };
 		93E01F3425B38585006ABB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E01F5125B3AE3A006ABB06 /* Hopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hopper.xcdatamodel; sourceTree = "<group>"; };
+		93E01F5625B3AE4F006ABB06 /* HopperPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperPersistence.swift; sourceTree = "<group>"; };
+		93E01F5C25B3AE94006ABB06 /* GoudaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E01F4825B3A950006ABB06 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,8 @@
 		93E01F0F25B38583006ABB06 /* Gouda */ = {
 			isa = PBXGroup;
 			children = (
+				93E01F5B25B3AE8C006ABB06 /* State */,
+				93E01F4C25B3ADA6006ABB06 /* Shared */,
 				93E01F1025B38583006ABB06 /* GoudaApp.swift */,
 				93E01F1225B38583006ABB06 /* ContentView.swift */,
 				93E01F1425B38584006ABB06 /* Assets.xcassets */,
@@ -136,6 +146,47 @@
 			path = GoudaUITests;
 			sourceTree = "<group>";
 		};
+		93E01F4C25B3ADA6006ABB06 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F4F25B3ADE6006ABB06 /* Hopper */,
+				93E01F4E25B3ADE1006ABB06 /* CheddarKit */,
+				93E01F4D25B3ADD9006ABB06 /* CheddarStore */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		93E01F4D25B3ADD9006ABB06 /* CheddarStore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheddarStore;
+			sourceTree = "<group>";
+		};
+		93E01F4E25B3ADE1006ABB06 /* CheddarKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CheddarKit;
+			sourceTree = "<group>";
+		};
+		93E01F4F25B3ADE6006ABB06 /* Hopper */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F5025B3AE3A006ABB06 /* Hopper.xcdatamodeld */,
+				93E01F5625B3AE4F006ABB06 /* HopperPersistence.swift */,
+			);
+			path = Hopper;
+			sourceTree = "<group>";
+		};
+		93E01F5B25B3AE8C006ABB06 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F5C25B3AE94006ABB06 /* GoudaState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +203,9 @@
 			dependencies = (
 			);
 			name = Gouda;
+			packageProductDependencies = (
+				93E01F4725B3A950006ABB06 /* Networking */,
+			);
 			productName = Gouda;
 			productReference = 93E01F0D25B38583006ABB06 /* Gouda.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 93E01F0425B38583006ABB06;
+			packageReferences = (
+				93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */,
+			);
 			productRefGroup = 93E01F0E25B38583006ABB06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,8 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
+				93E01F5725B3AE4F006ABB06 /* HopperPersistence.swift in Sources */,
 				93E01F1325B38583006ABB06 /* ContentView.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
+				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,
+				93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */,
 				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +649,25 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Networking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93E01F4725B3A950006ABB06 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
 		93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */ = {
 			isa = XCVersionGroup;
@@ -597,6 +676,16 @@
 			);
 			currentVersion = 93E01F1C25B38584006ABB06 /* Gouda.xcdatamodel */;
 			path = Gouda.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		93E01F5025B3AE3A006ABB06 /* Hopper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				93E01F5125B3AE3A006ABB06 /* Hopper.xcdatamodel */,
+			);
+			currentVersion = 93E01F5125B3AE3A006ABB06 /* Hopper.xcdatamodel */;
+			path = Hopper.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

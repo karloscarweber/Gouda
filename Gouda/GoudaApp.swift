@@ -10,12 +10,12 @@ import SwiftUI
 
 @main
 struct GoudaApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceManager = PersistenceManager.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, persistenceManager.persistentContainer.viewContext)
         }
     }
 }
