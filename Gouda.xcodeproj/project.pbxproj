@@ -19,6 +19,9 @@
 		93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5025B3AE3A006ABB06 /* Hopper.xcdatamodeld */; };
 		93E01F5725B3AE4F006ABB06 /* HopperPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5625B3AE4F006ABB06 /* HopperPersistence.swift */; };
 		93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F5C25B3AE94006ABB06 /* GoudaState.swift */; };
+		93E01F7425B3B713006ABB06 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F7325B3B713006ABB06 /* UserModel.swift */; };
+		93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F7825B3B963006ABB06 /* ListModel.swift */; };
+		93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F7D25B3BA34006ABB06 /* TaskModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,10 @@
 		93E01F5125B3AE3A006ABB06 /* Hopper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hopper.xcdatamodel; sourceTree = "<group>"; };
 		93E01F5625B3AE4F006ABB06 /* HopperPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HopperPersistence.swift; sourceTree = "<group>"; };
 		93E01F5C25B3AE94006ABB06 /* GoudaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaState.swift; sourceTree = "<group>"; };
+		93E01F6525B3B350006ABB06 /* GoudaSchema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoudaSchema.json; sourceTree = "<group>"; };
+		93E01F7325B3B713006ABB06 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		93E01F7825B3B963006ABB06 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		93E01F7D25B3BA34006ABB06 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +114,7 @@
 		93E01F0F25B38583006ABB06 /* Gouda */ = {
 			isa = PBXGroup;
 			children = (
+				93E01F6425B3B347006ABB06 /* Reference */,
 				93E01F5B25B3AE8C006ABB06 /* State */,
 				93E01F4C25B3ADA6006ABB06 /* Shared */,
 				93E01F1025B38583006ABB06 /* GoudaApp.swift */,
@@ -183,8 +191,19 @@
 			isa = PBXGroup;
 			children = (
 				93E01F5C25B3AE94006ABB06 /* GoudaState.swift */,
+				93E01F7325B3B713006ABB06 /* UserModel.swift */,
+				93E01F7825B3B963006ABB06 /* ListModel.swift */,
+				93E01F7D25B3BA34006ABB06 /* TaskModel.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		93E01F6425B3B347006ABB06 /* Reference */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F6525B3B350006ABB06 /* GoudaSchema.json */,
+			);
+			path = Reference;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,8 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
 				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
+				93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */,
 				93E01F5725B3AE4F006ABB06 /* HopperPersistence.swift in Sources */,
+				93E01F7425B3B713006ABB06 /* UserModel.swift in Sources */,
 				93E01F1325B38583006ABB06 /* ContentView.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
 				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,

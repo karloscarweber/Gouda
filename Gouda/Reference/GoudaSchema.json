@@ -1,0 +1,109 @@
+//
+//  GoudaSchema.swift
+//  Gouda
+//
+//  Created by Karl Oscar Weber.
+//
+
+/*
+  Schema for the locoal store
+  For the local store
+*/
+
+/*
+  USER JSON Schema
+*/
+{
+  // basic stuff that everything has
+  "id": 1,
+  "created_at": "2019-01-25T20:33:01.102Z",
+  "updated_at": "2019-01-26T06:53:25.666Z",
+
+  // basic stuff that all Cheddar Data has
+  "url": "https://api.cheddarapp.com/v1/users/1",
+
+  // User stuff users for sure have
+  "username": "kow",
+  "has_plus": false,
+
+  // socket object is separate but always included inside of the user.
+  "socket": {
+    "api_key": "675f10a650f18b4eb0a8",
+    "app_id": "15197",
+    "auth_url": "https://api.cheddarapp.com/pusher/auth",
+    "channel": "private-user-1"
+  },
+
+}
+
+
+/*
+  List JSON Schema
+*/
+{
+  // basic stuff that everything has
+  "id": 1919,
+  "created_at": "2020-08-22T07:49:28.865Z",
+  "updated_at": "2020-08-22T07:50:37.493Z",
+
+  // basic stuff that all Cheddar Data has
+  "url": "https://api.cheddarapp.com/v1/lists/1919", // original stores' URL
+
+  // List stuff lists for sure have
+  "title": "Swift Foundations",
+  "position": 8,
+
+  // more stuff that lists have that are just like... nice to haves.
+  "active_completed_tasks_count": 0,
+  "active_tasks_count": 1,
+  "active_uncompleted_tasks_count": 1,
+
+  "archived_at": null,
+  "archived_completed_tasks_count": 0,
+  "archived_tasks_count": 0,
+  "archived_uncompleted_tasks_count": 0,
+}
+
+
+/*
+  Task JSON Schema
+*/
+{
+  // basic stuff that everything has
+  "id": 21391, // map to local
+  "created_at": "2020-12-02T04:25:19.854Z",
+  "updated_at": "2020-12-02T04:25:19.854Z",
+
+  // basic stuff that everything has
+  "url": "https://api.cheddarapp.com/v1/tasks/21391"
+
+  // Task stuff tasks for sure have
+  "archived_at": null,
+  "completed_at": null,
+  "display_text": "This logo poster.",
+  "text": "[This logo poster](http://www.petersdesigncompany.com/shop/pdco-brand-icons-poster).",
+  "display_html": "\u003ca href=\"http://www.petersdesigncompany.com/shop/pdco-brand-icons-poster\" rel=\"external nofollow\" class=\"link\"\u003eThis logo poster\u003c/a\u003e.",
+
+  "list_id": 69, // Has to be mapped to local
+  "position": 48, // has to be mapped to local
+
+  // ignore this stuff
+  // "tags": [],
+  // "entities": [
+  //   {
+  //     "display_indices": [
+  //       0,
+  //       …
+  //     ],
+  //     "display_text": "This logo poster",
+  //     "indices": [
+  //       0,
+  //       …
+  //     ],
+  //     "text": "[This logo poster](http://www.petersdesigncompany.com/shop/pdco-brand-icons-poster)",
+  //     "type": "link",
+  //     "url": "http://www.petersdesigncompany.com/shop/pdco-brand-icons-poster"
+  //   }
+  // ],
+
+}

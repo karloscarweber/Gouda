@@ -16,6 +16,8 @@ import UIKit
 import SwiftUI
 
 
-class GoudaState {
-  
+class GoudaState: ObservableObject {
+  @Published var lists: [ListModel]
+  @Published var tasks: [TaskModel]
+  @Published var tasksInList: [TasksForList]
 }
