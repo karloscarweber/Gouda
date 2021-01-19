@@ -12,6 +12,7 @@ import SwiftUI
 struct UserModel: Hashable, Codable, Identifiable {
   static func == (lhs: UserModel, rhs: UserModel) -> Bool {
     if lhs.id == rhs.id &&
+      lhs.remote_id == rhs.remote_id &&
       lhs.created_at == rhs.created_at &&
       lhs.updated_at == rhs.updated_at &&
       lhs.url == rhs.url &&
@@ -24,6 +25,7 @@ struct UserModel: Hashable, Codable, Identifiable {
   }
   
   var id: UUID?
+  var remote_id: Int64
   var created_at: String
   var updated_at: String
   

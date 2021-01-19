@@ -41,13 +41,12 @@ struct TaskModel: Hashable, Codable, Identifiable {
   var text: String
   var display_html: String
   
-  var list_id: Int
+  var list_id: UUID
   var position: Int
 }
-
 
 // a lightweight struct for putting the tasks associated with a list into an array
 struct TasksForList {
     var list_id = UUID()
     var tasks = [TaskModel]()
-} 
+}

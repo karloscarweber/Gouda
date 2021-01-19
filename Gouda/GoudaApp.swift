@@ -10,12 +10,22 @@ import SwiftUI
 
 @main
 struct GoudaApp: App {
-    let persistenceManager = PersistenceManager.shared
+  let persistenceManager = PersistenceManager.shared
+  
+  @StateObject var cheddarStore = CheddarStore()
+  @StateObject var hopper = Hopper()
+  
+//  @StateObject var goudaState = GoudaState()
+  
+  // The actual State object we're using for everything.
+  @StateObject var goudaState = GoudaState()
+  
+//  @StateObject private var userSettings = UserSettings()
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceManager.persistentContainer.viewContext)
-        }
+  var body: some Scene {
+    WindowGroup {
+      MainScreen(goudaState: goudaState)
+//        .environmentObject(self.goudaState)
     }
+  }
 }

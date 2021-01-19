@@ -1,20 +1,23 @@
 //
-//  HopperPersistence.swift
+//  CheddarStore.swift
 //  Gouda
 //
 //  Created by Karl Oscar Weber.
 //
 
-
-import UIKit
+import Foundation
 import CoreData
+import SwiftUI
+import Combine
 
-class Hopper: ObservableObject {
-  
-  static let shared = Hopper()
+class CheddarStore: ObservableObject {
+  @Published var user: [UserModel]
+  @Published var lists: [ListModel]
+  @Published var tasks: [TaskModel]
+  @Published var tasksInList: [TasksForList]
   
   let persistentContainer: NSPersistentContainer = {
-    let container = NSPersistentContainer(name: "Hopper")
+    let container = NSPersistentContainer(name: "CheddarStore")
     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
       if let error = error as NSError? {
         fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -23,7 +26,7 @@ class Hopper: ObservableObject {
     return container
   }()
   
-  init() {
+  func setupSavePersistence() {
     let center = NotificationCenter.default
     let notification = UIApplication.willResignActiveNotification
     
@@ -35,4 +38,21 @@ class Hopper: ObservableObject {
       }
     }
   }
+  
+  init() {
+    self.user = []
+    self.lists = []
+    self.tasks = []
+    self.tasksInList = []
+    setupSavePersistence()
+  }
+  
+  private func updateData() {
+//    let request: NSFetchRequest
+  }
+  
+}
+
+extension CheddarStore {
+  
 }

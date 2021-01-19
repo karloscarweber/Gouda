@@ -46,4 +46,12 @@ struct ListModel: Hashable, Codable, Identifiable {
   var archived_tasks_count: Int
   var archived_uncompleted_tasks_count: Int
   
+//}
+//
+//extension GoudaState {
+  
+  // creates a nil empty list to be edited and changed and stuff
+  static func emptyList() -> ListModel {
+    return ListModel(id: nil, created_at: "", updated_at: "", url: "", title: "", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0)
+  }
 }

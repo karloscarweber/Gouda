@@ -34,6 +34,10 @@
     "channel": "private-user-1"
   },
 
+
+  // local additions
+  "remote_id": 21391,
+
 }
 
 
@@ -58,10 +62,16 @@
   "active_tasks_count": 1,
   "active_uncompleted_tasks_count": 1,
 
-  "archived_at": null,
-  "archived_completed_tasks_count": 0,
-  "archived_tasks_count": 0,
-  "archived_uncompleted_tasks_count": 0,
+
+  // local additions
+  "remote_id": 21391,
+  "remote_position": 21391,
+
+  // we don't need this
+  // "archived_at": null,
+  // "archived_completed_tasks_count": 0,
+  // "archived_tasks_count": 0,
+  // "archived_uncompleted_tasks_count": 0,
 }
 
 
@@ -70,7 +80,7 @@
 */
 {
   // basic stuff that everything has
-  "id": 21391, // map to local
+  "id": 21391,
   "created_at": "2020-12-02T04:25:19.854Z",
   "updated_at": "2020-12-02T04:25:19.854Z",
 
@@ -86,6 +96,14 @@
 
   "list_id": 69, // Has to be mapped to local
   "position": 48, // has to be mapped to local
+
+
+  // local additions
+  "remote_id": 21391,
+  "remote_list_id": 21391,
+  "remote_position": 21391,
+
+
 
   // ignore this stuff
   // "tags": [],

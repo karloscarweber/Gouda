@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CSManagedList" representedClassName="CSManagedList" syncable="YES" codeGenerationType="class">
+        <attribute name="active_completed_tasks_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="active_tasks_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="active_uncompleted_tasks_count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="archived_at" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="remote_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="remote_position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CSManagedSocket" representedClassName="CSManagedSocket" syncable="YES" codeGenerationType="class">
+        <attribute name="api_key" optional="YES" attributeType="String"/>
+        <attribute name="app_id" optional="YES" attributeType="String"/>
+        <attribute name="auth_url" optional="YES" attributeType="String"/>
+        <attribute name="channel" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CSManagedTask" representedClassName="CSManagedTask" syncable="YES" codeGenerationType="class">
+        <attribute name="archived_at" optional="YES" attributeType="String"/>
+        <attribute name="completed_at" optional="YES" attributeType="String"/>
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="display_html" optional="YES" attributeType="String"/>
+        <attribute name="display_text" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="list_id" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CSManagedUser" representedClassName="CSManagedUser" syncable="YES" codeGenerationType="class">
+        <attribute name="created_at" optional="YES" attributeType="String"/>
+        <attribute name="has_plus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="remote_id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="updated_at" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CSManagedUser" positionX="-501.444091796875" positionY="-51.99969482421875" width="128" height="148"/>
+        <element name="CSManagedTask" positionX="-218.3094482421875" positionY="-222.7823181152344" width="128" height="208"/>
+        <element name="CSManagedList" positionX="-217.4920654296875" positionY="-126.8961791992188" width="128" height="223"/>
+        <element name="CSManagedSocket" positionX="-151.7801513671875" positionY="102.117431640625" width="128" height="103"/>
+    </elements>
+</model>
