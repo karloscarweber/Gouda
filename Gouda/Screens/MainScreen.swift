@@ -23,9 +23,10 @@ struct MainScreen: View {
             
             ForEach(goudaState.lists, id: \.id) { list in
               
-              NavigationLink(destination: ListDetailScreen(listId: list.id!, proxy: ListProxy(goudaState, withList: list)  ) ) {
+              NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
                 Text("\(list.position) \(list.title)")
               }
+              
             }
             
           }
@@ -33,7 +34,6 @@ struct MainScreen: View {
           .navigationTitle(
             Text("Lists")
           )
-          
           
         }
         // end of ZStack

@@ -14,7 +14,7 @@ class CheddarStore: ObservableObject {
   @Published var user: [UserModel]
   @Published var lists: [ListModel]
   @Published var tasks: [TaskModel]
-  @Published var tasksInList: [TasksForList]
+//  @Published var tasksInList: [TasksForList]
   
   let persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "CheddarStore")
@@ -43,7 +43,6 @@ class CheddarStore: ObservableObject {
     self.user = []
     self.lists = []
     self.tasks = []
-    self.tasksInList = []
     setupSavePersistence()
   }
   

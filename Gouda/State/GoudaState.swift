@@ -21,25 +21,29 @@ class GoudaState: ObservableObject {
   @Published var user: UserModel? // add this when we add logging in.
   @Published var lists: [ListModel]
   @Published var tasks: [TaskModel]
-  @Published var tasksInList: [TasksForList]
+  
+  // List Proxy Stuff
+  @Published var currentTasks: [TaskModel]
   
   init() {
     self.user = nil
     self.lists = []
     self.tasks = []
-    self.tasksInList = []
+    self.currentTasks = []
     
     sampleData()
   }
   
   func sampleData() {
-//    lists.append()
     let list_id = UUID()
+    let list_id_2 = UUID()
     lists.append(ListModel(id: list_id, created_at: "", updated_at: "", url: "", title: "First List", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0))
     
-    for list in lists {
-      print(" list_id: \(list.id!)")
-    }
+    lists.append(ListModel(id: list_id_2, created_at: "", updated_at: "", url: "", title: "Second List", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0))
+    
+//    for list in lists {
+//      print(" list_id: \(list.id!)")
+//    }
     
     tasks.append(contentsOf: [
       TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Hello World", text: "Hello World", display_html: "<p>Hello World</p>", list_id: list_id, position: 1),
@@ -51,17 +55,12 @@ class GoudaState: ObservableObject {
       TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Bones", text: "Bones", display_html: "<p>Bones</p>", list_id: list_id, position: 4),
       
       TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Sulu", text: "**Sulu**", display_html: "<p><strong>Sulu</strong></p>", list_id: list_id, position: 5),
+
+      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Get this to work", text: "Get this to work **work**", display_html: "<p>Get this to <strong>work</strong></p>", list_id: list_id_2, position: 2),
+      
+      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Move to Portland", text: "**Move to Portland**", display_html: "<p><strong>Move to Portland</strong></p>", list_id: list_id_2, position: 1),
+      
     ])
-    
-    
-//    for task in tasks {
-//      print(" list_id: \(task.list_id)")
-//      if task.archived_at == nil {
-//        print("This is not archived")
-//      } else {
-//        print("This is archived")
-//      }
-//    }
     
   }
 
@@ -130,9 +129,15 @@ extension GoudaState {
 // Task Functions
 extension GoudaState {
   func createOrUpdateTask(fromModel model: TaskModel) {
+    
+    print("Create or update task called")
+    print("task: \(model)")
+    
     if model.id == nil {
+      print("createTask")
       createTask(fromModel: model)
     } else {
+      print("updateTask")
       updateTask(fromModel: model)
     }
   }
@@ -150,8 +155,6 @@ extension GoudaState {
   func deleteTask(fromModel model: TaskModel) {
     lists = lists.filter ( { $0.id == model.id } )
   }
-  
-
   
   func reorderTasks(from models: [TaskModel]) {
     
@@ -210,4 +213,15 @@ extension GoudaState {
     tasksFromList = tasksFromList.sorted(by: { $0.position < $1.position })
     return tasksFromList
   }
+}
+
+
+// List Proxy Functions
+extension GoudaState {
+  
+  // sets the current tasks to match a new list
+  func setCurrentTasks(toList list: ListModel) {
+    self.currentTasks = sortedTasks(in: list)
+  }
+  
 }

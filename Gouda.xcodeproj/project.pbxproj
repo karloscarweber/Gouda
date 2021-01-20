@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93176F5125B7C37100C7D553 /* TaskForm.swift */; };
 		9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCD925B5808200304BF4 /* ListDetailScreen.swift */; };
 		9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */; };
-		938D798D25B77565001B16FD /* ListProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938D798C25B77565001B16FD /* ListProxy.swift */; };
 		93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1025B38583006ABB06 /* GoudaApp.swift */; };
 		93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* OldContentView.swift */; };
 		93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1425B38584006ABB06 /* Assets.xcassets */; };
@@ -52,10 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
 		9381DCD925B5808200304BF4 /* ListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailScreen.swift; sourceTree = "<group>"; };
 		9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
-		938D798C25B77565001B16FD /* ListProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProxy.swift; sourceTree = "<group>"; };
-		938D799125B77592001B16FD /* ViewModelProxy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ViewModelProxy.md; sourceTree = "<group>"; };
 		93E01F0D25B38583006ABB06 /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E01F1025B38583006ABB06 /* GoudaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaApp.swift; sourceTree = "<group>"; };
 		93E01F1225B38583006ABB06 /* OldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldContentView.swift; sourceTree = "<group>"; };
@@ -112,13 +111,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		938D798B25B77551001B16FD /* ViewModelProxys */ = {
+		93176F5025B7C36500C7D553 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				938D799125B77592001B16FD /* ViewModelProxy.md */,
-				938D798C25B77565001B16FD /* ListProxy.swift */,
+				93176F5125B7C37100C7D553 /* TaskForm.swift */,
 			);
-			path = ViewModelProxys;
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		93E01F0425B38583006ABB06 = {
@@ -227,7 +225,6 @@
 		93E01F5B25B3AE8C006ABB06 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				938D798B25B77551001B16FD /* ViewModelProxys */,
 				93E01F5C25B3AE94006ABB06 /* GoudaState.swift */,
 				93E01F7325B3B713006ABB06 /* UserModel.swift */,
 				93E01F7825B3B963006ABB06 /* ListModel.swift */,
@@ -255,6 +252,7 @@
 		93E01F9D25B41430006ABB06 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				93176F5025B7C36500C7D553 /* Forms */,
 				93E01FB225B416E8006ABB06 /* MainScreen.swift */,
 				9381DCD925B5808200304BF4 /* ListDetailScreen.swift */,
 				93E01F9E25B41445006ABB06 /* LoginScreen.swift */,
@@ -409,6 +407,7 @@
 				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
 				93E01F8B25B3D722006ABB06 /* CheddarStore.xcdatamodeld in Sources */,
 				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
+				93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */,
 				93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */,
 				93E01F9625B3F74E006ABB06 /* ManagedObjectContext.swift in Sources */,
 				9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */,
@@ -421,7 +420,6 @@
 				93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
 				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,
-				938D798D25B77565001B16FD /* ListProxy.swift in Sources */,
 				93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */,
 				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,
 				93E01F9F25B41445006ABB06 /* LoginScreen.swift in Sources */,

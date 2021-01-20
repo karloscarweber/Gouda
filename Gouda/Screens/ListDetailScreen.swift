@@ -10,52 +10,31 @@ import SwiftUI
 
 struct ListDetailScreen: View {
   
-//  @ObservedObject var goudaState: GoudaState
-  @ObservedObject var listProxy: ListProxy
-  
+  @ObservedObject var goudaState: GoudaState
+  @State private var list: ListModel
+  @State private var isAddingTask = false
   @State var isEditing = false
-  @State var isAddingTask = false
   
-  init(listId: UUID, proxy: ListProxy) {
-    
-    listProxy = proxy
-    
-//    self.goudaState = gouda
-//    if let listData = goudaState.list(for: listId) {
-//      print("listIdlistIdlistIdlistIdlistId: \(listId)")
-//      list = listData
-//      let allTasks = goudaState.tasks(in: list)
-//
-//      for task in allTasks {
-//        print("task")
-//      }
-//
-//      activeTasks = allTasks.filter({ $0.archived_at == nil })
-//      for task in activeTasks {
-//        print("task")
-//      }
-//    } else {
-//
-//      print("for some reason we get no list data")
-//
-//    }
+  init(_ gouda: GoudaState, withList aList: ListModel) {
+    self.goudaState = gouda
+    self._list = State(initialValue: aList)
   }
   
     var body: some View {
       List {
-        ForEach(listProxy.tasks, id: \.id) { task in
+        ForEach(goudaState.sortedTasks(in: list), id: \.id) { task in
           Text(task.text)
         }
       }
       .listStyle(PlainListStyle())
       .navigationTitle(
-        Text("\(listProxy.list.title)")
+        Text("\(list.title)")
       )
       .navigationBarItems(trailing: Button("add task", action: {
           isAddingTask = true
       }))
       .sheet(isPresented: $isAddingTask) {
-          AddTaskScreen()
+        AddTaskScreen(goudaState: goudaState, list: list)
       }
       
     }
