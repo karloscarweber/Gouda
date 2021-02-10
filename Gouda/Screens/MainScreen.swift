@@ -17,38 +17,53 @@ struct MainScreen: View {
   @State var isAddingList = false
   
     var body: some View {
-      NavigationView {
-        ZStack {
-          List {
+        
+        TabView {
             
-            ForEach(goudaState.lists, id: \.id) { list in
-              
-              NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
-                Text("\(list.position) \(list.title)")
+        
+          NavigationView {
+            ZStack {
+              List {
+                
+                ForEach(goudaState.lists, id: \.id) { list in
+                  
+                  NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
+                    Text("\(list.position) \(list.title)")
+                  }
+                  
+                }
+                
+              }
+              .listStyle(PlainListStyle())
+              .navigationTitle(
+                Text("Lists")
+              )
+              .navigationBarItems(trailing: Button("add list", action: {
+                isAddingList = true
+              }))
+              .sheet(isPresented: $isAddingList) {
+                AddListScreen(goudaState: goudaState)
               }
               
             }
-            
+          } // End NavigationView 1
+          .tabItem {
+            Image(systemName: "house.fill")
+            Text("Home")
           }
-          .listStyle(PlainListStyle())
-          .navigationTitle(
-            Text("Lists")
-          )
-          
-        }
-        // end of ZStack
+            
+            NavigationView {
+                InspectorView(goudaState: goudaState)
+            }
+            .tabItem {
+              Image(systemName: "magnifyingglass")
+              Text("Inspector")
+            }
         
-//        VStack {
-//          Spacer()
-//          Button {
-//            isAddingList = true
-//          } label: {
-//            RoundedButton(title: "New List")
-//          }
-//        }.padding()
+        } // End TabView
+
         
-      }
-//      .environmentObject(goudaState)
+        
     }
 }
 

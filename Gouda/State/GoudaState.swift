@@ -102,7 +102,9 @@ extension GoudaState {
   }
   
   func createList(fromModel model: ListModel) {
-    lists.append(model)
+    var mutableModel = model
+    mutableModel.id = UUID()
+    lists.append(mutableModel)
   }
   
   func updateList(fromModel model: ListModel) {
@@ -143,7 +145,9 @@ extension GoudaState {
   }
   
   func createTask(fromModel model: TaskModel) {
-    tasks.append(model)
+    var mutableModel = model
+    mutableModel.id = UUID()
+    tasks.append(mutableModel)
   }
   
   func updateTask(fromModel model: TaskModel) {
