@@ -44,6 +44,19 @@ struct MainScreen: View {
               .sheet(isPresented: $isAddingList) {
                 AddListScreen(goudaState: goudaState)
               }
+              // end List
+              
+              // Add List Button
+              VStack {
+                Spacer()
+                Button( action: {
+                  isAddingList = true
+                } ) {
+                  RoundedButtonView(text: "Add List")
+                }
+                .padding()
+                
+              }
               
             }
           } // End NavigationView 1

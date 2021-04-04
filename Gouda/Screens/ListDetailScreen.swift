@@ -21,20 +21,38 @@ struct ListDetailScreen: View {
   }
   
     var body: some View {
-      List {
-        ForEach(goudaState.sortedTasks(in: list), id: \.id) { task in
-          Text(task.text)
+      
+      ZStack {
+      
+        // tasks list
+        List {
+          ForEach(goudaState.sortedTasks(in: list), id: \.id) { task in
+            Text(task.text)
+          }
         }
-      }
-      .listStyle(PlainListStyle())
-      .navigationTitle(
-        Text("\(list.title)")
-      )
-      .navigationBarItems(trailing: Button("add task", action: {
-          isAddingTask = true
-      }))
-      .sheet(isPresented: $isAddingTask) {
-        AddTaskScreen(goudaState: goudaState, list: list)
+        .listStyle(PlainListStyle())
+        .navigationTitle(
+          Text("\(list.title)")
+        )
+        .navigationBarItems(trailing: Button("add task", action: {
+            isAddingTask = true
+        }))
+        .sheet(isPresented: $isAddingTask) {
+          AddTaskScreen(goudaState: goudaState, list: list)
+        }
+      
+        // Add Task Button
+        VStack {
+          Spacer()
+          Button( action: {
+            isAddingTask = true
+          } ) {
+            RoundedButtonView(text: "Add Task")
+          }
+          .padding()
+          
+        }
+      
       }
       
     }
