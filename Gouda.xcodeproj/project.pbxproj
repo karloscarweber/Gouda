@@ -10,6 +10,11 @@
 		93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93176F5125B7C37100C7D553 /* TaskForm.swift */; };
 		9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCD925B5808200304BF4 /* ListDetailScreen.swift */; };
 		9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */; };
+		93C0D21225D367E50051FA43 /* AddListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D21125D367E50051FA43 /* AddListScreen.swift */; };
+		93C0D21725D3683C0051FA43 /* ListForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D21625D3683C0051FA43 /* ListForm.swift */; };
+		93C0D21D25D39E830051FA43 /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D21C25D39E830051FA43 /* InspectorView.swift */; };
+		93C0D22225D39F920051FA43 /* AllListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22125D39F920051FA43 /* AllListsView.swift */; };
+		93C0D22725D3C0370051FA43 /* ListDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22625D3C0370051FA43 /* ListDataView.swift */; };
 		93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1025B38583006ABB06 /* GoudaApp.swift */; };
 		93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* OldContentView.swift */; };
 		93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1425B38584006ABB06 /* Assets.xcassets */; };
@@ -55,6 +60,12 @@
 		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
 		9381DCD925B5808200304BF4 /* ListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailScreen.swift; sourceTree = "<group>"; };
 		9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
+		93C0D21025D366A30051FA43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		93C0D21125D367E50051FA43 /* AddListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListScreen.swift; sourceTree = "<group>"; };
+		93C0D21625D3683C0051FA43 /* ListForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListForm.swift; sourceTree = "<group>"; };
+		93C0D21C25D39E830051FA43 /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
+		93C0D22125D39F920051FA43 /* AllListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsView.swift; sourceTree = "<group>"; };
+		93C0D22625D3C0370051FA43 /* ListDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataView.swift; sourceTree = "<group>"; };
 		93E01F0D25B38583006ABB06 /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E01F1025B38583006ABB06 /* GoudaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaApp.swift; sourceTree = "<group>"; };
 		93E01F1225B38583006ABB06 /* OldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldContentView.swift; sourceTree = "<group>"; };
@@ -115,8 +126,19 @@
 			isa = PBXGroup;
 			children = (
 				93176F5125B7C37100C7D553 /* TaskForm.swift */,
+				93C0D21625D3683C0051FA43 /* ListForm.swift */,
 			);
 			path = Forms;
+			sourceTree = "<group>";
+		};
+		93C0D21B25D39E680051FA43 /* InspectorViews */ = {
+			isa = PBXGroup;
+			children = (
+				93C0D21C25D39E830051FA43 /* InspectorView.swift */,
+				93C0D22125D39F920051FA43 /* AllListsView.swift */,
+				93C0D22625D3C0370051FA43 /* ListDataView.swift */,
+			);
+			path = InspectorViews;
 			sourceTree = "<group>";
 		};
 		93E01F0425B38583006ABB06 = {
@@ -156,6 +178,7 @@
 				93E01F1E25B38584006ABB06 /* Info.plist */,
 				93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */,
 				93E01F1625B38584006ABB06 /* Preview Content */,
+				93C0D21025D366A30051FA43 /* README.md */,
 			);
 			path = Gouda;
 			sourceTree = "<group>";
@@ -236,6 +259,7 @@
 		93E01F6425B3B347006ABB06 /* Reference */ = {
 			isa = PBXGroup;
 			children = (
+				93C0D21B25D39E680051FA43 /* InspectorViews */,
 				93E01F6525B3B350006ABB06 /* GoudaSchema.json */,
 			);
 			path = Reference;
@@ -257,6 +281,7 @@
 				9381DCD925B5808200304BF4 /* ListDetailScreen.swift */,
 				93E01F9E25B41445006ABB06 /* LoginScreen.swift */,
 				9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */,
+				93C0D21125D367E50051FA43 /* AddListScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -406,6 +431,7 @@
 				93E01FB325B416E8006ABB06 /* MainScreen.swift in Sources */,
 				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
 				93E01F8B25B3D722006ABB06 /* CheddarStore.xcdatamodeld in Sources */,
+				93C0D21725D3683C0051FA43 /* ListForm.swift in Sources */,
 				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
 				93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */,
 				93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */,
@@ -414,8 +440,12 @@
 				93E01F8325B3BC07006ABB06 /* CheddarStore.swift in Sources */,
 				9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */,
 				93E01FBB25B4188E006ABB06 /* ContentView.swift in Sources */,
+				93C0D22725D3C0370051FA43 /* ListDataView.swift in Sources */,
+				93C0D21D25D39E830051FA43 /* InspectorView.swift in Sources */,
+				93C0D21225D367E50051FA43 /* AddListScreen.swift in Sources */,
 				93E01F5725B3AE4F006ABB06 /* HopperPersistence.swift in Sources */,
 				93E01F7425B3B713006ABB06 /* UserModel.swift in Sources */,
+				93C0D22225D39F920051FA43 /* AllListsView.swift in Sources */,
 				93E01F9025B3DC0E006ABB06 /* CSUserExtension.swift in Sources */,
 				93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
