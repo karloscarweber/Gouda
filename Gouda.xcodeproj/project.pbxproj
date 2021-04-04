@@ -60,7 +60,8 @@
 		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
 		9381DCD925B5808200304BF4 /* ListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailScreen.swift; sourceTree = "<group>"; };
 		9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
-		93AC842C26198AB80049902E /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = SOURCE_ROOT; };
+		93885B9826198CB900FB10F0 /* CheddarKit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CheddarKit.md; sourceTree = "<group>"; };
+		93AC842C26198AB80049902E /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedButtonView.swift; path = Gouda/Views/RoundedButtonView.swift; sourceTree = SOURCE_ROOT; };
 		93C0D21025D366A30051FA43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		93C0D21125D367E50051FA43 /* AddListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListScreen.swift; sourceTree = "<group>"; };
 		93C0D21625D3683C0051FA43 /* ListForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListForm.swift; sourceTree = "<group>"; };
@@ -131,6 +132,22 @@
 			path = Forms;
 			sourceTree = "<group>";
 		};
+		93885B9726198CA800FB10F0 /* CheddarKit */ = {
+			isa = PBXGroup;
+			children = (
+				93885B9826198CB900FB10F0 /* CheddarKit.md */,
+			);
+			path = CheddarKit;
+			sourceTree = "<group>";
+		};
+		93AC843126198C570049902E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93AC842C26198AB80049902E /* RoundedButtonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		93C0D21B25D39E680051FA43 /* InspectorViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +181,7 @@
 		93E01F0F25B38583006ABB06 /* Gouda */ = {
 			isa = PBXGroup;
 			children = (
-				93E01FA625B414D3006ABB06 /* Views */,
+				93AC843126198C570049902E /* Views */,
 				93E01F9D25B41430006ABB06 /* Screens */,
 				93E01F9425B3F741006ABB06 /* Modifications */,
 				93E01F6425B3B347006ABB06 /* Reference */,
@@ -211,8 +228,8 @@
 		93E01F4C25B3ADA6006ABB06 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				93885B9726198CA800FB10F0 /* CheddarKit */,
 				93E01F4F25B3ADE6006ABB06 /* Hopper */,
-				93E01F4E25B3ADE1006ABB06 /* CheddarKit */,
 				93E01F4D25B3ADD9006ABB06 /* CheddarStore */,
 			);
 			path = Shared;
@@ -226,13 +243,6 @@
 				93E01F8F25B3DC0E006ABB06 /* CSUserExtension.swift */,
 			);
 			path = CheddarStore;
-			sourceTree = "<group>";
-		};
-		93E01F4E25B3ADE1006ABB06 /* CheddarKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CheddarKit;
 			sourceTree = "<group>";
 		};
 		93E01F4F25B3ADE6006ABB06 /* Hopper */ = {
@@ -283,14 +293,6 @@
 				93C0D21125D367E50051FA43 /* AddListScreen.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		93E01FA625B414D3006ABB06 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				93AC842C26198AB80049902E /* RoundedButtonView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
