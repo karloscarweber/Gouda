@@ -30,7 +30,8 @@ struct ListDetailScreen: View {
             Text(task.text)
           }
         }
-        .listStyle(PlainListStyle())
+//        .listStyle(PlainListStyle())
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle(
           Text("\(list.title)")
         )

@@ -19,28 +19,31 @@ struct MainScreen: View {
     var body: some View {
         
         TabView {
-            
         
           NavigationView {
             ZStack {
               List {
                 
                 ForEach(goudaState.lists, id: \.id) { list in
-                  
                   NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
-                    Text("\(list.position) \(list.title)")
+                    ListRowView(position: list.position, title: list.title)
                   }
-                  
+                }
+                .onMove(perform: move)
+                .onLongPressGesture {
+                  withAnimation {
+                    self.isEditing = true
+                  }
                 }
                 
               }
-              .listStyle(PlainListStyle())
+//              .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
+//              .environment(\.editMode, .constant(.active) )
+              .listStyle(InsetGroupedListStyle())
               .navigationTitle(
                 Text("Lists")
               )
-              .navigationBarItems(trailing: Button("add list", action: {
-                isAddingList = true
-              }))
+              .navigationBarItems(trailing: EditButton())
               .sheet(isPresented: $isAddingList) {
                 AddListScreen(goudaState: goudaState)
               }
@@ -65,19 +68,23 @@ struct MainScreen: View {
             Text("Home")
           }
             
-            NavigationView {
-                InspectorView(goudaState: goudaState)
-            }
-            .tabItem {
-              Image(systemName: "magnifyingglass")
-              Text("Inspector")
-            }
+          NavigationView {
+              InspectorView(goudaState: goudaState)
+          }
+          .tabItem {
+            Image(systemName: "magnifyingglass")
+            Text("Inspector")
+          }
         
         } // End TabView
-
-        
-        
+    } // end body
+  
+  func move(from source: IndexSet, to destination: Int) {
+    print("is moving?")
+    withAnimation {
+      isEditing = false
     }
+  }
 }
 
 struct MainScreen_Previews: PreviewProvider {

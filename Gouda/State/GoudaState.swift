@@ -14,8 +14,14 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class GoudaState: ObservableObject {
+  
+  var cheddarStore = CheddarStore()
+  var hopper = Hopper()
+  
+  var cancellables = Set<AnyCancellable>()
 
 //  // published data
   @Published var user: UserModel? // add this when we add logging in.
@@ -25,17 +31,24 @@ class GoudaState: ObservableObject {
   // List Proxy Stuff
   @Published var currentTasks: [TaskModel]
   
+  
+  
   init() {
     self.user = nil
     self.lists = []
     self.tasks = []
     self.currentTasks = []
     
+    // This should update our tasks whenever the dat
+    cheddarStore.$tasks.sink(receiveValue: { updatedTasks in
+      self.tasks = updatedTasks
+    }).store(in: &cancellables)
+    
     sampleData()
   }
   
   func sampleData() {
-    let list_id = UUID()
+    let list_id = UUID(uuidString: "BBFB4E01-AF68-4C8E-BC80-0B22D9581626")
     let list_id_2 = UUID()
     lists.append(ListModel(id: list_id, created_at: "", updated_at: "", url: "", title: "First List", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0))
     
@@ -44,23 +57,24 @@ class GoudaState: ObservableObject {
 //    for list in lists {
 //      print(" list_id: \(list.id!)")
 //    }
+    tasks = cheddarStore.tasks // get the tasks from the store
     
-    tasks.append(contentsOf: [
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Hello World", text: "Hello World", display_html: "<p>Hello World</p>", list_id: list_id, position: 1),
-      
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "I'm really happy to see you.", text: "I'm *really* happy to see you.", display_html: "<p>I'm <em>really</em> happy to see you.</p>", list_id: list_id, position: 2),
-      
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Jim", text: "Jim", display_html: "<p>Jim</p>", list_id: list_id, position: 3),
-      
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Bones", text: "Bones", display_html: "<p>Bones</p>", list_id: list_id, position: 4),
-      
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Sulu", text: "**Sulu**", display_html: "<p><strong>Sulu</strong></p>", list_id: list_id, position: 5),
-
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Get this to work", text: "Get this to work **work**", display_html: "<p>Get this to <strong>work</strong></p>", list_id: list_id_2, position: 2),
-      
-      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Move to Portland", text: "**Move to Portland**", display_html: "<p><strong>Move to Portland</strong></p>", list_id: list_id_2, position: 1),
-      
-    ])
+//    tasks.append(contentsOf: [
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Hello World", text: "Hello World", display_html: "<p>Hello World</p>", list_id: list_id, position: 1),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "I'm really happy to see you.", text: "I'm *really* happy to see you.", display_html: "<p>I'm <em>really</em> happy to see you.</p>", list_id: list_id, position: 2),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Jim", text: "Jim", display_html: "<p>Jim</p>", list_id: list_id, position: 3),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Bones", text: "Bones", display_html: "<p>Bones</p>", list_id: list_id, position: 4),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Sulu", text: "**Sulu**", display_html: "<p><strong>Sulu</strong></p>", list_id: list_id, position: 5),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Get this to work", text: "Get this to work **work**", display_html: "<p>Get this to <strong>work</strong></p>", list_id: list_id_2, position: 2),
+//
+//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Move to Portland", text: "**Move to Portland**", display_html: "<p><strong>Move to Portland</strong></p>", list_id: list_id_2, position: 1),
+//
+//    ])
     
   }
 
@@ -145,9 +159,11 @@ extension GoudaState {
   }
   
   func createTask(fromModel model: TaskModel) {
-    var mutableModel = model
-    mutableModel.id = UUID()
-    tasks.append(mutableModel)
+    cheddarStore.updateOrCreateTask(fromModel: model)
+    
+//    var mutableModel = model
+//    mutableModel.id = UUID()
+//    tasks.append(mutableModel)
   }
   
   func updateTask(fromModel model: TaskModel) {
@@ -166,7 +182,7 @@ extension GoudaState {
     var order = 1
     var orderedTasks = [TaskModel]()
     for var task in models {
-      task.position = order
+      task.position = Int64(order)
       orderedTasks.append(task)
       order += 1
     }
@@ -214,6 +230,8 @@ extension GoudaState {
   // doesn't really sort them, just returns an ordered list of them instead of un ordered.
   func sortedTasks(in list: ListModel) -> [TaskModel] {
     var tasksFromList = tasks(in: list)
+    print("*********************************")
+    print(tasksFromList)
     tasksFromList = tasksFromList.sorted(by: { $0.position < $1.position })
     return tasksFromList
   }

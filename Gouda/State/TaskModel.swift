@@ -42,17 +42,40 @@ struct TaskModel: Hashable, Codable, Identifiable {
   var display_html: String
   
   var list_id: UUID?
-  var position: Int
+  var position: Int64
 }
-
-// a lightweight struct for putting the tasks associated with a list into an array
-//struct TasksForList {
-//    var list_id = UUID()
-//    var tasks = [TaskModel]()
-//}
 
 extension TaskModel {
   static func emptyTask() -> TaskModel {
-    return TaskModel(id: nil, created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "", text: "", display_html: "", list_id: nil, position: 1000)
+    return TaskModel(id: nil,
+                     created_at: "",
+                     updated_at: "",
+                     url: "",
+                     archived_at: nil,
+                     completed_at: nil,
+                     display_text: "",
+                     text: "",
+                     display_html: "",
+                     list_id: nil,
+                     position: 1000)
+  }
+}
+
+
+extension TaskModel {
+  init(task: CSManagedTask) {
+    id = task.id
+    archived_at = task.archived_at
+    created_at = task.created_at!
+    updated_at = task.updated_at!
+    url = task.url!
+    completed_at = task.completed_at
+    display_text = task.display_text!
+    text = task.text!
+    list_id = task.list_id
+    position = task.position
+    
+    // unexpectedly found nil
+    display_html = ""
   }
 }
