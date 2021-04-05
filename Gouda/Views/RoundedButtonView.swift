@@ -14,10 +14,10 @@ struct RoundedButtonView: View {
     var body: some View {
       Text(text)
         .bold()
-        .frame(width: 255, height: 54)
+        .frame(width: 225, height: 44)
         .foregroundColor(Color.white)
         .background(Color.blue)
-        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 27, height: 27), style: RoundedCornerStyle.continuous)  )
+        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 22, height: 22), style: RoundedCornerStyle.continuous)  )
     }
 }
 
