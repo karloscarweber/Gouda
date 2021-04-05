@@ -13,50 +13,40 @@ struct MainScreen: View {
 //  @EnvironmentObject var goudaState: GoudaState
   @ObservedObject var goudaState: GoudaState
   
-  @State var isEditing = false
   @State var isAddingList = false
   
     var body: some View {
         
         TabView {
+            NavigationView {
             
-        
-          NavigationView {
             ZStack {
-              List {
                 
-                ForEach(goudaState.lists, id: \.id) { list in
-                  
-                  NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
-                    Text("\(list.position) \(list.title)")
-                  }
-                  
+                List {
+                    ForEach(goudaState.lists, id: \.id) { list in
+                        NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
+                            Text("\(list.position) \(list.title)")
+                        }
+                    }.onMove(perform: move)
                 }
-                
-              }
-              .listStyle(PlainListStyle())
-              .navigationTitle(
-                Text("Lists")
-              )
-              .navigationBarItems(trailing: Button("add list", action: {
-                isAddingList = true
-              }))
-              .sheet(isPresented: $isAddingList) {
-                AddListScreen(goudaState: goudaState)
-              }
-              // end List
-              
-              // Add List Button
-              VStack {
-                Spacer()
-                Button( action: {
-                  isAddingList = true
-                } ) {
-                  RoundedButtonView(text: "Add List")
+                .listStyle(PlainListStyle())
+                //              .navigationTitle(
+                //                Text("Lists")
+                //              )
+                .navigationBarItems(trailing: EditButton())
+                .sheet(isPresented: $isAddingList) {
+                    AddListScreen(goudaState: goudaState)
                 }
-                .padding()
-                
-              }
+
+                VStack {
+                    Spacer()
+                    Button( action: {
+                        isAddingList = true
+                    } ) {
+                        RoundedButtonView(text: "Add List")
+                    }
+                    .padding()
+                }
               
             }
           } // End NavigationView 1
@@ -74,10 +64,13 @@ struct MainScreen: View {
             }
         
         } // End TabView
-
-        
-        
     }
+    
+    func move(from source: IndexSet, to destination: Int) {
+//        users.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    
 }
 
 struct MainScreen_Previews: PreviewProvider {
