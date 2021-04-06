@@ -146,8 +146,8 @@ extension GoudaState {
 extension GoudaState {
   func createOrUpdateTask(fromModel model: TaskModel) {
     
-    print("Create or update task called")
-    print("task: \(model)")
+//    print("Create or update task called")
+//    print("task: \(model)")
     
     if model.id == nil {
       print("createTask")
@@ -167,9 +167,10 @@ extension GoudaState {
   }
   
   func updateTask(fromModel model: TaskModel) {
-    var filteredTasks = tasks.filter ( { $0.id == model.id } )
-    filteredTasks.append(model)
-    tasks = filteredTasks
+    cheddarStore.updateOrCreateTask(fromModel: model)
+//    var filteredTasks = tasks.filter ( { $0.id == model.id } )
+//    filteredTasks.append(model)
+//    tasks = filteredTasks
   }
   
   func deleteTask(fromModel model: TaskModel) {
@@ -178,32 +179,19 @@ extension GoudaState {
   
   func reorderTasks(from models: [TaskModel]) {
     
-    // order them
-    var order = 1
-    var orderedTasks = [TaskModel]()
-    for var task in models {
-      task.position = Int64(order)
-      orderedTasks.append(task)
-      order += 1
+    var reorderedModels = models
+    
+    var order = Int64(1)
+    for index in 0..<reorderedModels.count {
+        reorderedModels[index].position = order
+        order += 1
     }
     
-    // get an index of ids
-    var ids = [UUID]()
-    for task in orderedTasks {
-      ids.append(task.id!)
+    for task in reorderedModels {
+        self.createOrUpdateTask(fromModel: task)
     }
     
-    // remove all the tasks that match the ids we had
-    var leftoverTasks = [TaskModel]()
-    leftoverTasks = tasks.filter({ !ids.contains($0.id!) })
-    
-    // append orderedTasks to leftoverTasks, to unify everything
-    leftoverTasks.append(contentsOf: orderedTasks)
-    
-    tasks = leftoverTasks
   }
-  
-
   
 }
 

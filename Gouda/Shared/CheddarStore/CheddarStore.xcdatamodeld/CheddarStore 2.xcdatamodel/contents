@@ -27,7 +27,7 @@
         <attribute name="display_html" optional="YES" attributeType="String"/>
         <attribute name="display_text" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="list_id" optional="YES" attributeType="String"/>
+        <attribute name="list_id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="position" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="updated_at" optional="YES" attributeType="String"/>

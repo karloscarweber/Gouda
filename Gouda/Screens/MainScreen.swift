@@ -29,10 +29,7 @@ struct MainScreen: View {
                 }
                 .onMove(perform: move)
 
-                
               }
-//              .environment(\.editMode, isEditing ? .constant(.active) : .constant(.inactive))
-//              .environment(\.editMode, .constant(.active) )
               .listStyle(InsetGroupedListStyle())
               .navigationTitle(
                 Text("Lists")
