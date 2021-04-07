@@ -31,8 +31,6 @@ class GoudaState: ObservableObject {
   // List Proxy Stuff
   @Published var currentTasks: [TaskModel]
   
-  
-  
   init() {
     self.user = nil
     self.lists = []
@@ -44,38 +42,13 @@ class GoudaState: ObservableObject {
       self.tasks = updatedTasks
     }).store(in: &cancellables)
     
-    sampleData()
-  }
-  
-  func sampleData() {
-    let list_id = UUID(uuidString: "BBFB4E01-AF68-4C8E-BC80-0B22D9581626")
-    let list_id_2 = UUID()
-    lists.append(ListModel(id: list_id, created_at: "", updated_at: "", url: "", title: "First List", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0))
-    
-    lists.append(ListModel(id: list_id_2, created_at: "", updated_at: "", url: "", title: "Second List", position: 1000, active_completed_tasks_count: 0, active_tasks_count: 0, active_uncompleted_tasks_count: 0, archived_at: nil, archived_completed_tasks_count: 0, archived_tasks_count: 0, archived_uncompleted_tasks_count: 0))
-    
-//    for list in lists {
-//      print(" list_id: \(list.id!)")
-//    }
-    tasks = cheddarStore.tasks // get the tasks from the store
-    
-//    tasks.append(contentsOf: [
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Hello World", text: "Hello World", display_html: "<p>Hello World</p>", list_id: list_id, position: 1),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "I'm really happy to see you.", text: "I'm *really* happy to see you.", display_html: "<p>I'm <em>really</em> happy to see you.</p>", list_id: list_id, position: 2),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Jim", text: "Jim", display_html: "<p>Jim</p>", list_id: list_id, position: 3),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Bones", text: "Bones", display_html: "<p>Bones</p>", list_id: list_id, position: 4),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Sulu", text: "**Sulu**", display_html: "<p><strong>Sulu</strong></p>", list_id: list_id, position: 5),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Get this to work", text: "Get this to work **work**", display_html: "<p>Get this to <strong>work</strong></p>", list_id: list_id_2, position: 2),
-//
-//      TaskModel(id: UUID(), created_at: "", updated_at: "", url: "", archived_at: nil, completed_at: nil, display_text: "Move to Portland", text: "**Move to Portland**", display_html: "<p><strong>Move to Portland</strong></p>", list_id: list_id_2, position: 1),
-//
-//    ])
-    
+    cheddarStore.$lists.sink(receiveValue: { updatedLists in
+        self.lists = updatedLists
+    }).store(in: &cancellables)
+   
+    // Load the data
+    lists = cheddarStore.lists
+    tasks = cheddarStore.tasks
   }
 
 }
@@ -116,15 +89,11 @@ extension GoudaState {
   }
   
   func createList(fromModel model: ListModel) {
-    var mutableModel = model
-    mutableModel.id = UUID()
-    lists.append(mutableModel)
+    cheddarStore.updateOrCreateList(fromModel: model)
   }
   
   func updateList(fromModel model: ListModel) {
-    var filteredLists = lists.filter ( { $0.id == model.id } )
-    filteredLists.append(model)
-    lists = filteredLists
+    cheddarStore.updateOrCreateList(fromModel: model)
   }
   
   func deleteList(fromModel model: ListModel) {
@@ -135,20 +104,26 @@ extension GoudaState {
     lists = lists.sorted(by: { $0.position < $1.position })
   }
   
-  func reorder(from models: [ListModel]) {
-    lists = models
+  func reorderLists(from models: [ListModel]) {
+    var reorderedModels = models
+
+    var order = Int64(1)
+    for index in 0..<reorderedModels.count {
+        reorderedModels[index].position = Int(order)
+        order += 1
+    }
+    
+    for list in reorderedModels {
+        self.createOrUpdateList(fromModel: list)
+    }
+    
   }
   
 }
 
-
 // Task Functions
 extension GoudaState {
   func createOrUpdateTask(fromModel model: TaskModel) {
-    
-//    print("Create or update task called")
-//    print("task: \(model)")
-    
     if model.id == nil {
       print("createTask")
       createTask(fromModel: model)
@@ -160,17 +135,10 @@ extension GoudaState {
   
   func createTask(fromModel model: TaskModel) {
     cheddarStore.updateOrCreateTask(fromModel: model)
-    
-//    var mutableModel = model
-//    mutableModel.id = UUID()
-//    tasks.append(mutableModel)
   }
   
   func updateTask(fromModel model: TaskModel) {
     cheddarStore.updateOrCreateTask(fromModel: model)
-//    var filteredTasks = tasks.filter ( { $0.id == model.id } )
-//    filteredTasks.append(model)
-//    tasks = filteredTasks
   }
   
   func deleteTask(fromModel model: TaskModel) {
@@ -178,7 +146,6 @@ extension GoudaState {
   }
   
   func reorderTasks(from models: [TaskModel]) {
-    
     var reorderedModels = models
     
     var order = Int64(1)
@@ -223,6 +190,15 @@ extension GoudaState {
     tasksFromList = tasksFromList.sorted(by: { $0.position < $1.position })
     return tasksFromList
   }
+    
+    // doesn't really sort them, just returns an ordered list of them instead of un ordered.
+    func sortedLists() -> [ListModel] {
+      var theLists = lists
+      print("*********************************")
+      print(theLists)
+        theLists = theLists.sorted(by: { $0.position < $1.position })
+      return theLists
+    }
 }
 
 

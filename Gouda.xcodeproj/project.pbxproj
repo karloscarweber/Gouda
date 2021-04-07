@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93176F5125B7C37100C7D553 /* TaskForm.swift */; };
+		9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */; };
+		9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */; };
 		9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCD925B5808200304BF4 /* ListDetailScreen.swift */; };
 		9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */; };
 		93885B9D261B057100FB10F0 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93885B9C261B057100FB10F0 /* ListRowView.swift */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
 		9349FD3A261C337700FB2B91 /* CheddarStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CheddarStore 2.xcdatamodel"; sourceTree = "<group>"; };
+		9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTasksExtension.swift; sourceTree = "<group>"; };
+		9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSListsExtension.swift; sourceTree = "<group>"; };
 		9381DCD925B5808200304BF4 /* ListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailScreen.swift; sourceTree = "<group>"; };
 		9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
 		93885B9826198CB900FB10F0 /* CheddarKit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CheddarKit.md; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 			children = (
 			);
 			path = Migrations;
+			sourceTree = "<group>";
+		};
+		9349FD55261D3C4B00FB2B91 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93E01F7825B3B963006ABB06 /* ListModel.swift */,
+				93E01F7D25B3BA34006ABB06 /* TaskModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		93885B9726198CA800FB10F0 /* CheddarKit */ = {
@@ -249,8 +262,11 @@
 		93E01F4D25B3ADD9006ABB06 /* CheddarStore */ = {
 			isa = PBXGroup;
 			children = (
+				9349FD55261D3C4B00FB2B91 /* Models */,
 				9349FD47261C353100FB2B91 /* Migrations */,
 				93E01F8225B3BC07006ABB06 /* CheddarStore.swift */,
+				9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */,
+				9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */,
 				93E01F8925B3D722006ABB06 /* CheddarStore.xcdatamodeld */,
 				93E01F8F25B3DC0E006ABB06 /* CSUserExtension.swift */,
 			);
@@ -271,8 +287,6 @@
 			children = (
 				93E01F5C25B3AE94006ABB06 /* GoudaState.swift */,
 				93E01F7325B3B713006ABB06 /* UserModel.swift */,
-				93E01F7825B3B963006ABB06 /* ListModel.swift */,
-				93E01F7D25B3BA34006ABB06 /* TaskModel.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -442,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */,
 				93E01FB325B416E8006ABB06 /* MainScreen.swift in Sources */,
 				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
 				93E01F8B25B3D722006ABB06 /* CheddarStore.xcdatamodeld in Sources */,
@@ -464,6 +479,7 @@
 				93885B9D261B057100FB10F0 /* ListRowView.swift in Sources */,
 				93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
+				9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */,
 				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,
 				93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */,
 				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,

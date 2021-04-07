@@ -47,69 +47,45 @@ class CheddarStore: ObservableObject {
     setupSavePersistence()
     
     updateTasks()
+    updateLists()
   }
   
-  private func updateData() {
-//    let request: NSFetchRequest
-  }
+    private func updateData() {
+        //    let request: NSFetchRequest
+    }
+    
+    internal func updateTasks() {
+        let request: NSFetchRequest<CSManagedTask> = CSManagedTask.fetchRequest()
+        tasks = try! persistentContainer.viewContext.fetch(request).map(TaskModel.init)
+    }
+    
+    internal func updateLists() {
+        let request: NSFetchRequest<CSManagedList> = CSManagedList.fetchRequest()
+        lists = try! persistentContainer.viewContext.fetch(request).map(ListModel.init)
+    }
+    
+    // Internal properties
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        // standard ISO 8601
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+//        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
   
 }
 
+// Date utilities
 extension CheddarStore {
-  
-  func updateOrCreateTask(fromModel model: TaskModel) {
-    print("creating a task in the store!")
-    if model.id == nil {
-      createTask(fromModel: model)
-    } else {
-      updateTask(fromModel: model)
+    
+    func now() -> String {
+        return dateFormatter.string(from: Date())
     }
     
-    try? persistentContainer.viewContext.save()
+    // A way to return a date from a string
+    func dateFromString(_ dateString: String) -> Date? {
+        return dateFormatter.date(from: dateString)
+    }
     
-    updateTasks()
-  }
-  
-  private func createTask(fromModel model: TaskModel) {
-    let task = CSManagedTask(context: persistentContainer.viewContext)
-    task.id = UUID()
-    
-    apply(model: model, to: task)
-  }
-  
-  private func updateTask(fromModel model: TaskModel) {
-    guard let id = model.id else { return }
-    
-    let request: NSFetchRequest<CSManagedTask> = CSManagedTask.fetchRequest()
-    request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-    
-    guard let tasks = try? persistentContainer.viewContext.fetch(request),
-          let task = tasks.first, tasks.count == 1 else { return }
-    
-    apply(model: model, to: task)
-  }
-  
-  private func apply(model: TaskModel, to task: CSManagedTask) {
-    
-    print("are we getting this id: \(model.id) or this id: \(task.id)")
-    task.display_text = model.display_text
-    task.archived_at = model.archived_at
-    task.created_at = model.created_at
-    task.completed_at = model.completed_at
-    task.archived_at = model.archived_at
-    task.list_id = model.list_id
-    task.position = model.position
-    task.text = model.text
-    task.updated_at = model.updated_at
-    task.url = model.url
-  }
-  
-  private func updateTasks() {
-    print("updating tasks!")
-    let request: NSFetchRequest<CSManagedTask> = CSManagedTask.fetchRequest()
-    tasks = try! persistentContainer.viewContext.fetch(request).map(TaskModel.init)
-    
-    print("tasks:\(tasks)")
-  }
-  
 }

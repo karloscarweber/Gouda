@@ -19,9 +19,7 @@ struct AddTaskScreen: View {
   init(goudaState gouda: GoudaState, list theList: ListModel) {
     goudaState = gouda
     list = theList
-//    task.list_id = list.id!
     print("current Task: \(_task)")
-//    task.list_id = list.id!
   }
 
   var body: some View {
