@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "ASCollectionView",
+        "repositoryURL": "https://github.com/apptekstudios/ASCollectionView",
+        "state": {
+          "branch": null,
+          "revision": "bab75600a09e52a002101f1dcaab94d42591513b",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "DifferenceKit",
+        "repositoryURL": "https://github.com/ra1028/DifferenceKit",
+        "state": {
+          "branch": null,
+          "revision": "14c66681e12a38b81045f44c6c29724a0d4b0e72",
+          "version": "1.1.5"
+        }
+      },
+      {
         "package": "Networking",
         "repositoryURL": "https://github.com/freshOS/Networking",
         "state": {

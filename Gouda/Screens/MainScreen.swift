@@ -23,9 +23,19 @@ struct MainScreen: View {
                     
                   List {
                     ForEach(activeLists(), id: \.id) { list in
-                      NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
+//                      NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
+//                        ListRowView(position: list.position, title: list.title)
+//                      }
+                        
+                        
+                      NavigationLink(destination: SequenceComposeView()) {
                         ListRowView(position: list.position, title: list.title)
                       }
+                        
+//                        NavigationLink(destination: DragAndDropTableView()) {
+//                            ListRowView(position: list.position, title: list.title)
+//                        }
+                        
                     }
                     .onMove(perform: move)
                   }

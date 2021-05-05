@@ -24,8 +24,10 @@ struct GoudaApp: App {
 
   var body: some Scene {
     WindowGroup {
-      MainScreen(goudaState: goudaState)
+//      MainScreen(goudaState: goudaState)
 //        .environmentObject(self.goudaState)
+        
+        Home()
     }
   }
 }

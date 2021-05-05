@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93176F5125B7C37100C7D553 /* TaskForm.swift */; };
+		932758BB26216A5000000237 /* DragAndDropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932758BA26216A5000000237 /* DragAndDropTableView.swift */; };
+		932758CE26216BF900000237 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 932758CD26216BF900000237 /* ASCollectionView */; };
+		933A505F263FC13600FFC164 /* TaskModelDragNDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A505E263FC13600FFC164 /* TaskModelDragNDrop.swift */; };
+		933A5061263FC1C100FFC164 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A5060263FC1C100FFC164 /* TaskViewModel.swift */; };
+		933A5063263FC21100FFC164 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A5062263FC21100FFC164 /* Home.swift */; };
+		933A5065263FCAC100FFC164 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A5064263FCAC100FFC164 /* WebView.swift */; };
+		933A5067263FCC8100FFC164 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A5066263FCC8100FFC164 /* DropViewDelegate.swift */; };
 		9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */; };
 		9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */; };
 		9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCD925B5808200304BF4 /* ListDetailScreen.swift */; };
@@ -19,6 +26,7 @@
 		93C0D21D25D39E830051FA43 /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D21C25D39E830051FA43 /* InspectorView.swift */; };
 		93C0D22225D39F920051FA43 /* AllListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22125D39F920051FA43 /* AllListsView.swift */; };
 		93C0D22725D3C0370051FA43 /* ListDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22625D3C0370051FA43 /* ListDataView.swift */; };
+		93DC9116264200B6009598CB /* FauxTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC9115264200B6009598CB /* FauxTaskView.swift */; };
 		93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1025B38583006ABB06 /* GoudaApp.swift */; };
 		93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* OldContentView.swift */; };
 		93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1425B38584006ABB06 /* Assets.xcassets */; };
@@ -40,6 +48,7 @@
 		93E01F9625B3F74E006ABB06 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F9525B3F74E006ABB06 /* ManagedObjectContext.swift */; };
 		93E01F9F25B41445006ABB06 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F9E25B41445006ABB06 /* LoginScreen.swift */; };
 		93E01FB325B416E8006ABB06 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01FB225B416E8006ABB06 /* MainScreen.swift */; };
+		93F2D28A26316A26002F1C4C /* SequenceComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2D28926316A26002F1C4C /* SequenceComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +68,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		932758C526216AAA00000237 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
+		932758A9261FA26B00000237 /* Gouda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gouda.entitlements; sourceTree = "<group>"; };
+		932758BA26216A5000000237 /* DragAndDropTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropTableView.swift; sourceTree = "<group>"; };
+		933A505E263FC13600FFC164 /* TaskModelDragNDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelDragNDrop.swift; sourceTree = "<group>"; };
+		933A5060263FC1C100FFC164 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		933A5062263FC21100FFC164 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		933A5064263FCAC100FFC164 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		933A5066263FCC8100FFC164 /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		9349FD3A261C337700FB2B91 /* CheddarStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CheddarStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTasksExtension.swift; sourceTree = "<group>"; };
 		9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSListsExtension.swift; sourceTree = "<group>"; };
@@ -75,6 +104,7 @@
 		93C0D21C25D39E830051FA43 /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		93C0D22125D39F920051FA43 /* AllListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsView.swift; sourceTree = "<group>"; };
 		93C0D22625D3C0370051FA43 /* ListDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataView.swift; sourceTree = "<group>"; };
+		93DC9115264200B6009598CB /* FauxTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FauxTaskView.swift; sourceTree = "<group>"; };
 		93E01F0D25B38583006ABB06 /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E01F1025B38583006ABB06 /* GoudaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaApp.swift; sourceTree = "<group>"; };
 		93E01F1225B38583006ABB06 /* OldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +132,7 @@
 		93E01F9525B3F74E006ABB06 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		93E01F9E25B41445006ABB06 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		93E01FB225B416E8006ABB06 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		93F2D28926316A26002F1C4C /* SequenceComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93E01F4825B3A950006ABB06 /* Networking in Frameworks */,
+				932758CE26216BF900000237 /* ASCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +169,52 @@
 				93C0D21625D3683C0051FA43 /* ListForm.swift */,
 			);
 			path = Forms;
+			sourceTree = "<group>";
+		};
+		932758B126216A3000000237 /* DragAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				932758BA26216A5000000237 /* DragAndDropTableView.swift */,
+				93F2D28926316A26002F1C4C /* SequenceComposeView.swift */,
+			);
+			path = DragAndDrop;
+			sourceTree = "<group>";
+		};
+		933A505A263FC0FF00FFC164 /* DragToReorderTut */ = {
+			isa = PBXGroup;
+			children = (
+				933A505D263FC11C00FFC164 /* ViewModel */,
+				933A505C263FC11800FFC164 /* View */,
+				933A505B263FC11100FFC164 /* Model */,
+			);
+			path = DragToReorderTut;
+			sourceTree = "<group>";
+		};
+		933A505B263FC11100FFC164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				933A505E263FC13600FFC164 /* TaskModelDragNDrop.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		933A505C263FC11800FFC164 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				933A5062263FC21100FFC164 /* Home.swift */,
+				933A5064263FCAC100FFC164 /* WebView.swift */,
+				93DC9115264200B6009598CB /* FauxTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		933A505D263FC11C00FFC164 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				933A5060263FC1C100FFC164 /* TaskViewModel.swift */,
+				933A5066263FCC8100FFC164 /* DropViewDelegate.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9349FD47261C353100FB2B91 /* Migrations */ = {
@@ -205,6 +283,8 @@
 		93E01F0F25B38583006ABB06 /* Gouda */ = {
 			isa = PBXGroup;
 			children = (
+				933A505A263FC0FF00FFC164 /* DragToReorderTut */,
+				932758A9261FA26B00000237 /* Gouda.entitlements */,
 				93AC843126198C570049902E /* Views */,
 				93E01F9D25B41430006ABB06 /* Screens */,
 				93E01F9425B3F741006ABB06 /* Modifications */,
@@ -311,6 +391,7 @@
 		93E01F9D25B41430006ABB06 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				932758B126216A3000000237 /* DragAndDrop */,
 				93176F5025B7C36500C7D553 /* Forms */,
 				93E01FB225B416E8006ABB06 /* MainScreen.swift */,
 				9381DCD925B5808200304BF4 /* ListDetailScreen.swift */,
@@ -331,6 +412,7 @@
 				93E01F0925B38583006ABB06 /* Sources */,
 				93E01F0A25B38583006ABB06 /* Frameworks */,
 				93E01F0B25B38583006ABB06 /* Resources */,
+				932758C526216AAA00000237 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +421,7 @@
 			name = Gouda;
 			packageProductDependencies = (
 				93E01F4725B3A950006ABB06 /* Networking */,
+				932758CD26216BF900000237 /* ASCollectionView */,
 			);
 			productName = Gouda;
 			productReference = 93E01F0D25B38583006ABB06 /* Gouda.app */;
@@ -413,6 +496,7 @@
 			mainGroup = 93E01F0425B38583006ABB06;
 			packageReferences = (
 				93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */,
+				932758CC26216BF900000237 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
 			);
 			productRefGroup = 93E01F0E25B38583006ABB06 /* Products */;
 			projectDirPath = "";
@@ -459,6 +543,7 @@
 				9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */,
 				93E01FB325B416E8006ABB06 /* MainScreen.swift in Sources */,
 				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
+				932758BB26216A5000000237 /* DragAndDropTableView.swift in Sources */,
 				93E01F8B25B3D722006ABB06 /* CheddarStore.xcdatamodeld in Sources */,
 				93C0D21725D3683C0051FA43 /* ListForm.swift in Sources */,
 				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
@@ -466,6 +551,7 @@
 				93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */,
 				93E01F9625B3F74E006ABB06 /* ManagedObjectContext.swift in Sources */,
 				9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */,
+				933A5065263FCAC100FFC164 /* WebView.swift in Sources */,
 				93E01F8325B3BC07006ABB06 /* CheddarStore.swift in Sources */,
 				9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */,
 				93C0D22725D3C0370051FA43 /* ListDataView.swift in Sources */,
@@ -475,14 +561,20 @@
 				93E01F7425B3B713006ABB06 /* UserModel.swift in Sources */,
 				93C0D22225D39F920051FA43 /* AllListsView.swift in Sources */,
 				93E01F9025B3DC0E006ABB06 /* CSUserExtension.swift in Sources */,
+				93F2D28A26316A26002F1C4C /* SequenceComposeView.swift in Sources */,
 				93AC842D26198AB80049902E /* RoundedButtonView.swift in Sources */,
+				93DC9116264200B6009598CB /* FauxTaskView.swift in Sources */,
+				933A5067263FCC8100FFC164 /* DropViewDelegate.swift in Sources */,
 				93885B9D261B057100FB10F0 /* ListRowView.swift in Sources */,
+				933A5061263FC1C100FFC164 /* TaskViewModel.swift in Sources */,
 				93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */,
+				933A5063263FC21100FFC164 /* Home.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
 				9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */,
 				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,
 				93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */,
 				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,
+				933A505F263FC13600FFC164 /* TaskModelDragNDrop.swift in Sources */,
 				93E01F9F25B41445006ABB06 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gouda/Gouda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Gouda/Preview Content\"";
 				DEVELOPMENT_TEAM = 6SRVK6QLTD;
@@ -652,6 +745,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.Gouda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -662,6 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Gouda/Gouda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Gouda/Preview Content\"";
 				DEVELOPMENT_TEAM = 6SRVK6QLTD;
@@ -674,6 +769,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.prologue.Gouda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -805,6 +901,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		932758CC26216BF900000237 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Networking";
@@ -816,6 +920,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		932758CD26216BF900000237 /* ASCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 932758CC26216BF900000237 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionView;
+		};
 		93E01F4725B3A950006ABB06 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */;
