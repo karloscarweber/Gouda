@@ -11,6 +11,9 @@ import SwiftUI
 struct MainScreen: View {
   
 //  @EnvironmentObject var goudaState: GoudaState
+    
+    @Environment(\.appDatabase) private var appDatabase
+    
   @ObservedObject var goudaState: GoudaState
   
   @State var isAddingList = false
@@ -23,19 +26,9 @@ struct MainScreen: View {
                     
                   List {
                     ForEach(activeLists(), id: \.id) { list in
-//                      NavigationLink(destination: ListDetailScreen(goudaState, withList: list)) {
-//                        ListRowView(position: list.position, title: list.title)
-//                      }
-                        
-                        
                       NavigationLink(destination: SequenceComposeView()) {
                         ListRowView(position: list.position, title: list.title)
                       }
-                        
-//                        NavigationLink(destination: DragAndDropTableView()) {
-//                            ListRowView(position: list.position, title: list.title)
-//                        }
-                        
                     }
                     .onMove(perform: move)
                   }
@@ -61,8 +54,9 @@ struct MainScreen: View {
                 }
                   
               }
-            
             }// End NavigationView 1
+              
+              
             .tabItem {
               Image(systemName: "house.fill")
               Text("Home")

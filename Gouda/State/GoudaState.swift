@@ -18,18 +18,24 @@ import Combine
 
 class GoudaState: ObservableObject {
   
-  var cheddarStore = CheddarStore()
-  var hopper = Hopper()
+    // database layer
+    var cheddarStore = CheddarStore()
+    // network layer
+    var hopper = Hopper()
+    
+    // new database layer
+    var appDatabase = AppDatabase.shared
   
-  var cancellables = Set<AnyCancellable>()
-
-//  // published data
-  @Published var user: UserModel? // add this when we add logging in.
-  @Published var lists: [ListModel]
-  @Published var tasks: [TaskModel]
-  
-  // List Proxy Stuff
-  @Published var currentTasks: [TaskModel]
+    var cancellables = Set<AnyCancellable>()
+    
+    //  // published data
+    @Published var user: User? // add this when we add logging in.
+    @Published var lists: [ListModel] // this is all lists
+    @Published var tasks: [TaskModel] // this is a task
+    
+    // List Proxy Stuff
+    @Published var currentTasks: [TaskModel]
+    @Published var filteredLists: [UUID: ListModel] = [:] // for storeing the filtered lists.
   
   init() {
     self.user = nil
@@ -49,6 +55,14 @@ class GoudaState: ObservableObject {
     // Load the data
     lists = cheddarStore.lists
     tasks = cheddarStore.tasks
+    
+    // get user from database
+    do {
+        self.user = try appDatabase.user()
+    } catch {
+        // oh damn!
+    }
+    
   }
 
 }
@@ -56,25 +70,25 @@ class GoudaState: ObservableObject {
 // User Functions
 extension GoudaState {
   
-  func createOrUpdateUser(fromModel model: UserModel) {
-    if model.id == nil {
-      createUser(fromModel: model)
-    } else {
-      updateUser(fromModel: model)
-    }
-  }
-  
-  func createUser(fromModel model: UserModel) {
-    user = model
-  }
-  
-  func updateUser(fromModel model: UserModel) {
-    user = model
-  }
-  
-  func deleteUser() {
-    user = nil
-  }
+//  func createOrUpdateUser(fromModel model: UserModel) {
+//    if model.id == nil {
+//      createUser(fromModel: model)
+//    } else {
+//      updateUser(fromModel: model)
+//    }
+//  }
+//  
+//  func createUser(fromModel model: UserModel) {
+//    user = model
+//  }
+//  
+//  func updateUser(fromModel model: UserModel) {
+//    user = model
+//  }
+//  
+//  func deleteUser() {
+//    user = nil
+//  }
   
 }
 
@@ -210,4 +224,14 @@ extension GoudaState {
     self.currentTasks = sortedTasks(in: list)
   }
   
+}
+
+
+// MARK: - Persistence
+extension GoudaState {
+    static let shared = makeShared()
+    
+    private static func makeShared() -> GoudaState {
+        return GoudaState()
+    }
 }

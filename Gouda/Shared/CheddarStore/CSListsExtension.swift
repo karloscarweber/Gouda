@@ -47,9 +47,9 @@ extension CheddarStore {
   
   private func apply(model: ListModel, to list: CSManagedList) {
     
-    list.active_completed_tasks_count = Int64(model.active_completed_tasks_count)
-    list.active_tasks_count = Int64(model.active_tasks_count)
-    list.active_uncompleted_tasks_count = Int64(model.active_uncompleted_tasks_count)
+//    list.active_completed_tasks_count = Int64(model.active_completed_tasks_count)
+//    list.active_tasks_count = Int64(model.active_tasks_count)
+//    list.active_uncompleted_tasks_count = Int64(model.active_uncompleted_tasks_count)
     list.archived_at = model.archived_at
     list.created_at = model.created_at
 //    list.id = model.id

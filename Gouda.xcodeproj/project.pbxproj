@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93176F5125B7C37100C7D553 /* TaskForm.swift */; };
+		931C55E4269E493F00146AFC /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55E3269E493F00146AFC /* UserRequest.swift */; };
+		931C55E6269E4A4800146AFC /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55E5269E4A4800146AFC /* Query.swift */; };
+		931C55E8269E4D6E00146AFC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55E7269E4D6E00146AFC /* Persistence.swift */; };
+		931C55EA269F8A8300146AFC /* FilteredListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55E9269F8A8300146AFC /* FilteredListModel.swift */; };
+		931C55EC26A02C1500146AFC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55EB26A02C1500146AFC /* Store.swift */; };
+		931C55EE26A1418300146AFC /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931C55ED26A1418300146AFC /* AccessToken.swift */; };
 		932758BB26216A5000000237 /* DragAndDropTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932758BA26216A5000000237 /* DragAndDropTableView.swift */; };
 		932758CE26216BF900000237 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 932758CD26216BF900000237 /* ASCollectionView */; };
 		933A505F263FC13600FFC164 /* TaskModelDragNDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A505E263FC13600FFC164 /* TaskModelDragNDrop.swift */; };
@@ -17,6 +23,10 @@
 		933A5067263FCC8100FFC164 /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933A5066263FCC8100FFC164 /* DropViewDelegate.swift */; };
 		9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */; };
 		9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */; };
+		937319DB264CC1420036722F /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 937319DA264CC1420036722F /* GRDB */; };
+		937319DF264CE2F50036722F /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937319DE264CE2F50036722F /* AppDatabase.swift */; };
+		937319E3264DC40A0036722F /* UsersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937319E2264DC40A0036722F /* UsersTable.swift */; };
+		937319E6264DC48F0036722F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937319E5264DC48F0036722F /* User.swift */; };
 		9381DCDA25B5808200304BF4 /* ListDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCD925B5808200304BF4 /* ListDetailScreen.swift */; };
 		9381DCDF25B5838500304BF4 /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */; };
 		93885B9D261B057100FB10F0 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93885B9C261B057100FB10F0 /* ListRowView.swift */; };
@@ -31,7 +41,7 @@
 		93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* OldContentView.swift */; };
 		93E01F1525B38584006ABB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1425B38584006ABB06 /* Assets.xcassets */; };
 		93E01F1825B38584006ABB06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E01F1725B38584006ABB06 /* Preview Assets.xcassets */; };
-		93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1925B38584006ABB06 /* Persistence.swift */; };
+		93E01F1A25B38584006ABB06 /* PersistenceOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1925B38584006ABB06 /* PersistenceOld.swift */; };
 		93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */; };
 		93E01F2825B38585006ABB06 /* GoudaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F2725B38585006ABB06 /* GoudaTests.swift */; };
 		93E01F3325B38585006ABB06 /* GoudaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F3225B38585006ABB06 /* GoudaUITests.swift */; };
@@ -83,6 +93,12 @@
 
 /* Begin PBXFileReference section */
 		93176F5125B7C37100C7D553 /* TaskForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskForm.swift; sourceTree = "<group>"; };
+		931C55E3269E493F00146AFC /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		931C55E5269E4A4800146AFC /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		931C55E7269E4D6E00146AFC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		931C55E9269F8A8300146AFC /* FilteredListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListModel.swift; sourceTree = "<group>"; };
+		931C55EB26A02C1500146AFC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		931C55ED26A1418300146AFC /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		932758A9261FA26B00000237 /* Gouda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gouda.entitlements; sourceTree = "<group>"; };
 		932758BA26216A5000000237 /* DragAndDropTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropTableView.swift; sourceTree = "<group>"; };
 		933A505E263FC13600FFC164 /* TaskModelDragNDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModelDragNDrop.swift; sourceTree = "<group>"; };
@@ -93,6 +109,10 @@
 		9349FD3A261C337700FB2B91 /* CheddarStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CheddarStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		9349FD4B261D3B5400FB2B91 /* CSTasksExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSTasksExtension.swift; sourceTree = "<group>"; };
 		9349FD50261D3BA900FB2B91 /* CSListsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSListsExtension.swift; sourceTree = "<group>"; };
+		937319DE264CE2F50036722F /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		937319E0264CE3F10036722F /* Schema.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Schema.md; sourceTree = "<group>"; };
+		937319E2264DC40A0036722F /* UsersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTable.swift; sourceTree = "<group>"; };
+		937319E5264DC48F0036722F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9381DCD925B5808200304BF4 /* ListDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailScreen.swift; sourceTree = "<group>"; };
 		9381DCDE25B5838500304BF4 /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
 		93885B9826198CB900FB10F0 /* CheddarKit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CheddarKit.md; sourceTree = "<group>"; };
@@ -110,7 +130,7 @@
 		93E01F1225B38583006ABB06 /* OldContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldContentView.swift; sourceTree = "<group>"; };
 		93E01F1425B38584006ABB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93E01F1725B38584006ABB06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		93E01F1925B38584006ABB06 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		93E01F1925B38584006ABB06 /* PersistenceOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceOld.swift; sourceTree = "<group>"; };
 		93E01F1C25B38584006ABB06 /* Gouda.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gouda.xcdatamodel; sourceTree = "<group>"; };
 		93E01F1E25B38584006ABB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93E01F2325B38585006ABB06 /* GoudaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoudaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937319DB264CC1420036722F /* GRDB in Frameworks */,
 				93E01F4825B3A950006ABB06 /* Networking in Frameworks */,
 				932758CE26216BF900000237 /* ASCollectionView in Frameworks */,
 			);
@@ -169,6 +190,14 @@
 				93C0D21625D3683C0051FA43 /* ListForm.swift */,
 			);
 			path = Forms;
+			sourceTree = "<group>";
+		};
+		931C55E2269E492300146AFC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				931C55E3269E493F00146AFC /* UserRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		932758B126216A3000000237 /* DragAndDrop */ = {
@@ -229,6 +258,39 @@
 			children = (
 				93E01F7825B3B963006ABB06 /* ListModel.swift */,
 				93E01F7D25B3BA34006ABB06 /* TaskModel.swift */,
+				931C55E9269F8A8300146AFC /* FilteredListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		937319DD264CE2E00036722F /* SQLStore */ = {
+			isa = PBXGroup;
+			children = (
+				937319DE264CE2F50036722F /* AppDatabase.swift */,
+				937319E4264DC47C0036722F /* Models */,
+				937319E1264DC3ED0036722F /* Tables */,
+				931C55E2269E492300146AFC /* Requests */,
+				937319E0264CE3F10036722F /* Schema.md */,
+				931C55E5269E4A4800146AFC /* Query.swift */,
+				931C55E7269E4D6E00146AFC /* Persistence.swift */,
+			);
+			path = SQLStore;
+			sourceTree = "<group>";
+		};
+		937319E1264DC3ED0036722F /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				937319E2264DC40A0036722F /* UsersTable.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		937319E4264DC47C0036722F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				937319E5264DC48F0036722F /* User.swift */,
+				931C55EB26A02C1500146AFC /* Store.swift */,
+				931C55ED26A1418300146AFC /* AccessToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,7 +356,7 @@
 				93E01F1025B38583006ABB06 /* GoudaApp.swift */,
 				93E01F1225B38583006ABB06 /* OldContentView.swift */,
 				93E01F1425B38584006ABB06 /* Assets.xcassets */,
-				93E01F1925B38584006ABB06 /* Persistence.swift */,
+				93E01F1925B38584006ABB06 /* PersistenceOld.swift */,
 				93E01F1E25B38584006ABB06 /* Info.plist */,
 				93E01F1B25B38584006ABB06 /* Gouda.xcdatamodeld */,
 				93E01F1625B38584006ABB06 /* Preview Content */,
@@ -332,6 +394,7 @@
 		93E01F4C25B3ADA6006ABB06 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				937319DD264CE2E00036722F /* SQLStore */,
 				93885B9726198CA800FB10F0 /* CheddarKit */,
 				93E01F4F25B3ADE6006ABB06 /* Hopper */,
 				93E01F4D25B3ADD9006ABB06 /* CheddarStore */,
@@ -422,6 +485,7 @@
 			packageProductDependencies = (
 				93E01F4725B3A950006ABB06 /* Networking */,
 				932758CD26216BF900000237 /* ASCollectionView */,
+				937319DA264CC1420036722F /* GRDB */,
 			);
 			productName = Gouda;
 			productReference = 93E01F0D25B38583006ABB06 /* Gouda.app */;
@@ -497,6 +561,7 @@
 			packageReferences = (
 				93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */,
 				932758CC26216BF900000237 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+				937319D9264CC1420036722F /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = 93E01F0E25B38583006ABB06 /* Products */;
 			projectDirPath = "";
@@ -543,10 +608,12 @@
 				9349FD4C261D3B5500FB2B91 /* CSTasksExtension.swift in Sources */,
 				93E01FB325B416E8006ABB06 /* MainScreen.swift in Sources */,
 				93E01F7925B3B963006ABB06 /* ListModel.swift in Sources */,
+				931C55E8269E4D6E00146AFC /* Persistence.swift in Sources */,
+				937319DF264CE2F50036722F /* AppDatabase.swift in Sources */,
 				932758BB26216A5000000237 /* DragAndDropTableView.swift in Sources */,
 				93E01F8B25B3D722006ABB06 /* CheddarStore.xcdatamodeld in Sources */,
 				93C0D21725D3683C0051FA43 /* ListForm.swift in Sources */,
-				93E01F1A25B38584006ABB06 /* Persistence.swift in Sources */,
+				93E01F1A25B38584006ABB06 /* PersistenceOld.swift in Sources */,
 				93176F5225B7C37100C7D553 /* TaskForm.swift in Sources */,
 				93E01F7E25B3BA34006ABB06 /* TaskModel.swift in Sources */,
 				93E01F9625B3F74E006ABB06 /* ManagedObjectContext.swift in Sources */,
@@ -563,15 +630,22 @@
 				93E01F9025B3DC0E006ABB06 /* CSUserExtension.swift in Sources */,
 				93F2D28A26316A26002F1C4C /* SequenceComposeView.swift in Sources */,
 				93AC842D26198AB80049902E /* RoundedButtonView.swift in Sources */,
+				931C55E6269E4A4800146AFC /* Query.swift in Sources */,
 				93DC9116264200B6009598CB /* FauxTaskView.swift in Sources */,
 				933A5067263FCC8100FFC164 /* DropViewDelegate.swift in Sources */,
+				937319E6264DC48F0036722F /* User.swift in Sources */,
+				931C55EE26A1418300146AFC /* AccessToken.swift in Sources */,
 				93885B9D261B057100FB10F0 /* ListRowView.swift in Sources */,
+				931C55E4269E493F00146AFC /* UserRequest.swift in Sources */,
 				933A5061263FC1C100FFC164 /* TaskViewModel.swift in Sources */,
+				931C55EA269F8A8300146AFC /* FilteredListModel.swift in Sources */,
 				93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */,
 				933A5063263FC21100FFC164 /* Home.swift in Sources */,
 				93E01F1D25B38584006ABB06 /* Gouda.xcdatamodeld in Sources */,
+				937319E3264DC40A0036722F /* UsersTable.swift in Sources */,
 				9349FD51261D3BA900FB2B91 /* CSListsExtension.swift in Sources */,
 				93E01F5D25B3AE94006ABB06 /* GoudaState.swift in Sources */,
+				931C55EC26A02C1500146AFC /* Store.swift in Sources */,
 				93E01F5225B3AE3A006ABB06 /* Hopper.xcdatamodeld in Sources */,
 				93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */,
 				933A505F263FC13600FFC164 /* TaskModelDragNDrop.swift in Sources */,
@@ -909,6 +983,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		937319D9264CC1420036722F /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.4;
+			};
+		};
 		93E01F4625B3A950006ABB06 /* XCRemoteSwiftPackageReference "Networking" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Networking";
@@ -924,6 +1006,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 932758CC26216BF900000237 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
 			productName = ASCollectionView;
+		};
+		937319DA264CC1420036722F /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 937319D9264CC1420036722F /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
 		};
 		93E01F4725B3A950006ABB06 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;

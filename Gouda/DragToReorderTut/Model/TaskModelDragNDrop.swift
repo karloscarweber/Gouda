@@ -11,4 +11,5 @@ import SwiftUI
 struct TaskModelDragNDrop: Identifiable {
     var id = UUID().uuidString
     var text: String
+    var color: Color
 }

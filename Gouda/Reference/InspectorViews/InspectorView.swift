@@ -21,7 +21,7 @@ struct InspectorView: View {
 //                }
                 
                 if let user = goudaState.user {
-                    Text("\(user.username)")
+                    Text("Username goes here")
                 } else {
                     Text("No User")
                 }

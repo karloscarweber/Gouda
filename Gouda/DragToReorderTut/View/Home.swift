@@ -102,10 +102,10 @@ struct Home: View {
                     
                     ForEach(taskData.tasks) { task in
                         
-                        FauxTaskView(backgroundColor: .blue, foregroundColor: .white, text: task.text)
+                        FauxTaskView(backgroundColor: task.color, foregroundColor: .white, text: task.text)
                             .onDrag({
                                 taskData.currentTask = task
-                                return NSItemProvider(contentsOf: URL(string: "\(task.id)")!)!
+                                return NSItemProvider(contentsOf: URL(string: "\(task.id)")!)! // URL in this case is, well the "url" of the task. which could pretty much be it's ID
                             })
                             .onDrop(of: [.url], delegate: DropViewDelegate(task:task, taskData: taskData))
                     }

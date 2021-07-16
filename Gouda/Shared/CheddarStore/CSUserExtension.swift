@@ -56,7 +56,7 @@ extension CheddarStore {
   func apply(model: UserModel, to user: CSManagedUser) {
     user.username = model.username
     
-    user.id = model.id
+    user.id = UUID()
     user.remote_id = model.remote_id
     user.created_at = model.created_at
     user.updated_at = model.updated_at
