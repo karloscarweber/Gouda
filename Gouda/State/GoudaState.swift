@@ -35,7 +35,7 @@ class GoudaState: ObservableObject {
     
     // List Proxy Stuff
     @Published var currentTasks: [TaskModel]
-    @Published var filteredLists: [UUID: ListModel] = [:] // for storeing the filtered lists.
+    @Published var filteredLists: [UUID: ListModel] = [:] // for storing the filtered lists.
   
   init() {
     self.user = nil
@@ -43,7 +43,7 @@ class GoudaState: ObservableObject {
     self.tasks = []
     self.currentTasks = []
     
-    // This should update our tasks whenever the dat
+    // This should update our tasks whenever the data is updates
     cheddarStore.$tasks.sink(receiveValue: { updatedTasks in
       self.tasks = updatedTasks
     }).store(in: &cancellables)
@@ -60,7 +60,7 @@ class GoudaState: ObservableObject {
     do {
         self.user = try appDatabase.user()
     } catch {
-        // oh damn!
+        fatalError("Something went wrong trying to get the User from the database.")
     }
     
   }

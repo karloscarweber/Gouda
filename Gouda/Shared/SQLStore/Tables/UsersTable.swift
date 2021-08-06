@@ -27,8 +27,10 @@ extension AppDatabase {
     }
     
     /**
-     *  user()
-     *  Gets the first database user
+     * user
+     *
+     * Gets the first database user.
+     * 
      */
     func user() throws -> User {
         var users: [User] = []
@@ -38,10 +40,17 @@ extension AppDatabase {
         if users.count > 0  {
             return users[0]
         } else {
-            throw DatabaseUserError.noUserFound
+            // recursion to get us a default user.
+            do {
+                try createFirstUser()
+                return try self.user()
+            } catch {
+                throw DatabaseUserError.noUserFound
+            }
         }
     }
     
+    /// Saves or updates a user
     func saveUser(_ user: inout User) throws {
         if user.email == nil {
             throw UserValidationError.missingEmail
@@ -51,12 +60,14 @@ extension AppDatabase {
         }
     }
     
+    /// Deletes a user with a specific ID
     func deleteUsers(ids: [Int64]) throws {
         try getdbWriter().write { db in
             _ = try User.deleteAll(db, ids: ids)
         }
     }
     
+    /// Creates Test uers for ui tests.
     static let uiTestusers = [User(id: nil, firstName: "Karl", lastName: "Weber", username: "kow", email: "me@kow.fm", hasPlus: false, settings: nil, features: nil, createdAt: Date(), updatedAt: Date())]
     
     func createUsersForUITests() throws {
@@ -68,9 +79,13 @@ extension AppDatabase {
         }
     }
     
+    func createFirstUser() throws {
+        try getdbWriter().write { db in
+            var mutableUser = User(id: nil, firstName: "local", lastName: "", username: "local", email: "", hasPlus: false, settings: nil, features: nil, createdAt: Date(), updatedAt: Date(), isLocal: true)
+            try mutableUser.save(db)
+        }
+    }
 }
-
-
 
 enum DatabaseUserError: Error {
     case noUserFound

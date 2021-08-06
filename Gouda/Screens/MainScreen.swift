@@ -10,11 +10,8 @@ import SwiftUI
 
 struct MainScreen: View {
   
-//  @EnvironmentObject var goudaState: GoudaState
-    
     @Environment(\.appDatabase) private var appDatabase
-    
-  @ObservedObject var goudaState: GoudaState
+    @Environment(\.goudaState) private var goudaState
   
   @State var isAddingList = false
   
@@ -55,8 +52,6 @@ struct MainScreen: View {
                   
               }
             }// End NavigationView 1
-              
-              
             .tabItem {
               Image(systemName: "house.fill")
               Text("Home")
@@ -87,7 +82,12 @@ struct MainScreen: View {
 }
 
 struct MainScreen_Previews: PreviewProvider {
+    @Environment(\.appDatabase) private var appDatabase
+    @Environment(\.goudaState) private var goudaState
+    
     static var previews: some View {
-      MainScreen(goudaState: GoudaState())
+      MainScreen()
+        .environment(\.appDatabase, AppDatabase.shared)
+        .environment(\.goudaState, GoudaState.shared)
     }
 }

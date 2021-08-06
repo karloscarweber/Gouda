@@ -41,10 +41,12 @@ extension AppDatabase {
             // Prepare the database with test fixtures if requested
 //            if CommandLine.arguments.contains("-fixedTestData") {
 //                try appDatabase.createPlayersForUITests()
+//                try appDatabase.seedDataIfEmpty()
 //            } else {
-//                // Otherwise, populate the database if it is empty, for better
-//                // demo purpose.
+                // Otherwise, populate the database if it is empty, for better
+                // demo purpose.
 //                try appDatabase.createRandomPlayersIfEmpty()
+                try appDatabase.seedDataIfEmpty()
 //            }
             
             return appDatabase

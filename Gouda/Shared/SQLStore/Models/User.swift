@@ -45,9 +45,26 @@ struct User: Identifiable, Equatable {
     // This data is not in the API it's only local.
     var parentId: Int64? // this is the userID of the parent of this user. This is used when a user logs in to an outside account and we claim that user identity as our own. For example, if you have a cheddar account, it makes sense that when you log in to that account you treat it as your self. If you're a member of a team then the team's data would belong to the team user, and be saved there too. In that case parentId would be nil or empty, meaning that it doesn't belong to some other User for realsys.
     var storeId: Int64? // The ID of the store that this User belongs to. The default 'local' user belongs to the 'local' store. If you log in to an account from another store, then this id points to that store. This Helps to track where a User came from. Locally, there is only one user. With the store data we can then find a syncing policy attached to the user, and sync, or not sync in accordance with that.
-    var isLocal: Bool = false // a simple boolean to see if this user is the local user. There can be only one.
+    var isLocal: Bool = false // a simple boolean to see if this user is the local user. There can be only one, Like Highlander.
     
     // We should probably add what sort of permissions you have with a particular user attached to a store. Locally it doesnt' matter with your own data, but when dealing with shared data, it's best to adopt the permissions policies of the source store.
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case username
+        case email
+        case hasPlus = "has_plus"
+        case settings
+        case features
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case parentId = "parent_id"
+        case storeId = "store_id"
+        case isLocal = "is_local"
+    }
+    
 }
 
 extension User {
@@ -66,22 +83,23 @@ extension User {
 
 /// See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension User: Codable, FetchableRecord, MutablePersistableRecord {
+    
     // Define database columsn from CodingKeys
     fileprivate enum Columns {
         static let id = Column(CodingKeys.id)
         static let firstName = Column(CodingKeys.firstName)
-        static let lastName = Column(CodingKeys.lastName)
+        static let last_name = Column(CodingKeys.lastName)
         static let username = Column(CodingKeys.username)
         static let email = Column(CodingKeys.email)
-        static let hasPlus = Column(CodingKeys.hasPlus)
+        static let has_plus = Column(CodingKeys.hasPlus)
         static let settings = Column(CodingKeys.settings)
         static let features = Column(CodingKeys.features)
-        static let parentId = Column(CodingKeys.parentId)
-        static let storeId = Column(CodingKeys.storeId)
-        static let isLocal = Column(CodingKeys.isLocal)
+        static let parent_id = Column(CodingKeys.parentId)
+        static let store_id = Column(CodingKeys.storeId)
+        static let is_local = Column(CodingKeys.isLocal)
         
-        static let createdAt = Column(CodingKeys.createdAt)
-        static let updatedAt = Column(CodingKeys.updatedAt)
+        static let created_at = Column(CodingKeys.createdAt)
+        static let updated_at = Column(CodingKeys.updatedAt)
     }
     
     // updates user id after it has been inserted in the database

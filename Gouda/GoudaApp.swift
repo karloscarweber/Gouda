@@ -12,26 +12,20 @@ import SwiftUI
 struct GoudaApp: App {
     
     @Environment(\.appDatabase) private var appDatabase
-    
-//  let persistenceManager = PersistenceManager.shared
-  
-//  @StateObject var cheddarStore = CheddarStore()
-//  @StateObject var hopper = Hopper()
-    
-//  @StateObject var goudaState = GoudaState()
+    @Environment(\.goudaState) private var goudaState
   
   // The actual State object we're using for everything.
-  let goudaState = GoudaState()
+//  let goudaState = GoudaState.shared
   
-//  @StateObject private var userSettings = UserSettings()
-
   var body: some Scene {
     WindowGroup {
-      MainScreen(goudaState: goudaState)
-        .environmentObject(self.goudaState)
-        .environment(\.appDatabase, AppDatabase.shared)
-        .environment(\.goudaState, GoudaState.shared)
-//        Home()
+//      MainScreen()
+////        .environmentObject(self.goudaState)
+//        .environment(\.appDatabase, AppDatabase.shared)
+//        .environment(\.goudaState, GoudaState.shared)
+        
+        UserView()
+            .environment(\.goudaState, GoudaState.shared)
     }
   }
 }
@@ -42,18 +36,18 @@ struct GoudaApp: App {
 
 // Let SwiftUI views access the database through the SwiftUI environment
 private struct AppDatabaseKey: EnvironmentKey {
-    static let defaultValue: AppDatabase? = nil
+    static let defaultValue: AppDatabase = AppDatabase.shared
 }
 private struct GoudaStateKey: EnvironmentKey {
-    static let defaultValue: GoudaState? = nil
+    static let defaultValue: GoudaState = GoudaState.shared
 }
 
 extension EnvironmentValues {
-    var appDatabase: AppDatabase? {
+    var appDatabase: AppDatabase {
         get { self[AppDatabaseKey.self] }
         set { self[AppDatabaseKey.self] = newValue }
     }
-    var goudaState: GoudaState? {
+    var goudaState: GoudaState {
         get { self[GoudaStateKey.self] }
         set { self[GoudaStateKey.self] = newValue }
     }

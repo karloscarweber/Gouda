@@ -13,9 +13,24 @@ struct Store: Identifiable, Equatable {
     var url: String
     var name: String
     var passportUser: Int64? // This the ID of the User that connects to this store. To simplify, you can only log in to a Store as a single user. This stays in line with the goal of 1 identity for each user, but distributed data stores for your data. It also simplifies data access across stores.
+    var remote: Bool = true // Defaults to true, only the local store is false
+    var personal: Bool = false// (if you sync your personal stuff or not) If set to true you'll aoutomatically sync your all personal user stuff here too. Like a backup.
     
     var createdAt: Date
     var updatedAt: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case url
+        case name
+        case passportUser = "passport_user"
+        case remote
+        case personal
+        
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
+    
 }
 
 extension Store {
@@ -26,8 +41,8 @@ extension Store {
     // supply default data
     static func defaultStores() -> [Store] {
         return [
-            Store(id: nil, url: "local", name: "local", passportUser: nil, createdAt: Date(), updatedAt: Date()),
-            Store(id: nil, url: "https://api.cheddarapp.com", name: "Cheddar", passportUser: nil, createdAt: Date(), updatedAt: Date()),
+            Store(id: nil, url: "local", name: "local", passportUser: nil, personal: true, createdAt: Date(), updatedAt: Date()),
+            Store(id: nil, url: "https://api.cheddarapp.com", name: "Cheddar", passportUser: nil, personal: true, createdAt: Date(), updatedAt: Date()),
         ]
     }
 }
@@ -36,12 +51,14 @@ extension Store {
 
 /// See https://github.com/groue/GRDB.swift/blob/master/README.md#records
 extension Store: Codable, FetchableRecord, MutablePersistableRecord {
-    // Define database columsn from CodingKeys
+    // Define database columns from CodingKeys
     fileprivate enum Columns {
         static let id = Column(CodingKeys.id)
         static let url = Column(CodingKeys.url)
         static let name = Column(CodingKeys.name)
-        static let passportUser = Column(CodingKeys.passportUser)
+        static let passport_user = Column(CodingKeys.passportUser)
+        static let remote = Column(CodingKeys.remote)
+        static let personal = Column(CodingKeys.personal)
         
         static let createdAt = Column(CodingKeys.createdAt)
         static let updatedAt = Column(CodingKeys.updatedAt)

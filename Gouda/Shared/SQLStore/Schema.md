@@ -34,28 +34,34 @@ Tasks -> TasksStoresIds: Remote IDs of the tasks associated with a particular st
 User:
 ```
 {
-    id: Int,
-    firstName: String,
-    lastName: String,
-    username: String,
-    email: String,
-    hasPlus: Bool,
-    settings: String,
-    features: String,
+    id: Int64, // optional but required once it's in the database
+    firstName: String, // optional
+    lastName: String,  // optional
+    username: String,  // required
+    email: String, // optional
+    hasPlus: Bool, // default = false, used when a user is referenced from outside the local DB
+    settings: String, // also used when referenced outside the local db
+    features: String, // also used when referenced outside the local db
     
     // standardized, every record has them.
     createdAt: DateTime,
-    updatedAt: DateTime
+    updatedAt: DateTime,
+    
+    // Only used on remot eclients in THEIR local databases
+    parentId: Int64, // references the parentId if it's not the local, but is YOU for a different store
+    storeId: Int64,  // the referenced store that it belongs to. 
+    isLocal: Bool    // If this is the default user, as in the core local client user, this is true.
+    
 }
 ```
 
 Stores:
 ```
 {
-    id: Int,
-    url: String,
-    remote: Bool,
-    personal: Bool, (if you sync your personal stuff or not)
+    id: Int, 
+    url: String, // https://api.cheddarapp.com, for example
+    remote: Bool, // Defaults to true, only the local store is false
+    personal: Bool, (if you sync your personal stuff or not) If set to true you'll aoutomatically sync your all personal user stuff here too. Like a backup. 
     
     // standardized, every record has them.
     createdAt: DateTime,

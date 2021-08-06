@@ -43,11 +43,26 @@ struct AppDatabase {
         // See https://github.com/groue/GRDB.swift/blob/master/Documentation/Migrations.md#the-erasedatabaseonschemachange-option
         migrator.eraseDatabaseOnSchemaChange = true
         #endif
+        migrator.eraseDatabaseOnSchemaChange = true
         
         // make User table
         migrator.registerMigration("createTables") { db in
             // Create a table
             // See https://github.com/groue/GRDB.swift#create-tables
+
+            // first create the store
+            try db.create(table: "store") { t in
+                t.autoIncrementedPrimaryKey("id")
+                t.column("url", .text)
+                t.column("name", .text).defaults(to: "")
+                t.column("passport_user", .integer)
+                t.column("remote", .boolean).notNull().defaults(to: false)
+                t.column("personal", .boolean).notNull().defaults(to: false)
+
+                t.column("created_at", .datetime)
+                t.column("updated_at", .datetime)
+            }
+            
             try db.create(table: "user") { t in
                 t.autoIncrementedPrimaryKey("id")
                 t.column("first_name", .text)
@@ -60,17 +75,12 @@ struct AppDatabase {
                 
                 t.column("created_at", .datetime)
                 t.column("updated_at", .datetime)
+                
+                t.column("parent_id", .integer)
+                t.column("store_id", .integer)
+                t.column("is_local", .boolean).notNull().defaults(to: false)
             }
             
-//            try db.create(table: "store") { t in
-//                t.autoIncrementedPrimaryKey("id")
-//                t.column("url", .text)
-//                t.column("remote", .boolean).notNull().defaults(to: false)
-//                t.column("personal", .boolean).notNull().defaults(to: false)
-//
-//                t.column("created_at", .datetime)
-//                t.column("updated_at", .datetime)
-//            }
 //
 //            try db.create(table: "token") { t in
 //                t.autoIncrementedPrimaryKey("id")
@@ -140,7 +150,7 @@ struct AppDatabase {
 //                t.column("position", .integer).notNull().defaults(to: 1)
 //            }
   
-            // not sure qhere this should go but won't delete.
+            // not sure where this should go but won't delete.
 //            /// default date stuff
 //            let now = Date()
 //            let formatter = DateFormatter()
@@ -169,6 +179,47 @@ extension AppDatabase {
                 return "Please provide a name"
             }
         }
+    }
+    
+    func seedDataIfEmpty() throws {
+        try dbWriter.write { db in
+            
+            // Seed default stores
+            if try Store.fetchCount(db) == 0 {
+                print("try createLocalStore()")
+                try createLocalStore(db)
+            }
+            
+            // Seed default User
+            if try User.fetchCount(db) == 0 {
+                print("try createLocalUser()")
+                try createLocalUser(db)
+            }
+        }
+    }
+    
+    /**
+     *  createLocalStore
+     *
+     *  Seeds the local database with the default stores, Local, and https://api.cheddarapp.com.
+     *
+     */
+    func createLocalStore(_ db: Database) throws {
+        let stores = Store.defaultStores()
+        for var store in stores {
+            try store.insert(db)
+        }
+    }
+    
+    /**
+     *  createLocalUser
+     *
+     *  Seeds the local database with the local user, who is just local, and is always the user.
+     *
+     */
+    func createLocalUser(_ db: Database) throws {
+        var user = User.makeLocal()
+        try user.insert(db)
     }
     
 }

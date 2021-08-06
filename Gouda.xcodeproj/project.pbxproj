@@ -36,6 +36,7 @@
 		93C0D21D25D39E830051FA43 /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D21C25D39E830051FA43 /* InspectorView.swift */; };
 		93C0D22225D39F920051FA43 /* AllListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22125D39F920051FA43 /* AllListsView.swift */; };
 		93C0D22725D3C0370051FA43 /* ListDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C0D22625D3C0370051FA43 /* ListDataView.swift */; };
+		93D62B2926B540F500C11AE6 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D62B2826B540F500C11AE6 /* UserView.swift */; };
 		93DC9116264200B6009598CB /* FauxTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DC9115264200B6009598CB /* FauxTaskView.swift */; };
 		93E01F1125B38583006ABB06 /* GoudaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1025B38583006ABB06 /* GoudaApp.swift */; };
 		93E01F1325B38583006ABB06 /* OldContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E01F1225B38583006ABB06 /* OldContentView.swift */; };
@@ -124,6 +125,7 @@
 		93C0D21C25D39E830051FA43 /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		93C0D22125D39F920051FA43 /* AllListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsView.swift; sourceTree = "<group>"; };
 		93C0D22625D3C0370051FA43 /* ListDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDataView.swift; sourceTree = "<group>"; };
+		93D62B2826B540F500C11AE6 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		93DC9115264200B6009598CB /* FauxTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FauxTaskView.swift; sourceTree = "<group>"; };
 		93E01F0D25B38583006ABB06 /* Gouda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gouda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E01F1025B38583006ABB06 /* GoudaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoudaApp.swift; sourceTree = "<group>"; };
@@ -322,6 +324,14 @@
 			path = InspectorViews;
 			sourceTree = "<group>";
 		};
+		93D62B2726B540D600C11AE6 /* DatabaseTestViews */ = {
+			isa = PBXGroup;
+			children = (
+				93D62B2826B540F500C11AE6 /* UserView.swift */,
+			);
+			path = DatabaseTestViews;
+			sourceTree = "<group>";
+		};
 		93E01F0425B38583006ABB06 = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +355,7 @@
 		93E01F0F25B38583006ABB06 /* Gouda */ = {
 			isa = PBXGroup;
 			children = (
+				93D62B2726B540D600C11AE6 /* DatabaseTestViews */,
 				933A505A263FC0FF00FFC164 /* DragToReorderTut */,
 				932758A9261FA26B00000237 /* Gouda.entitlements */,
 				93AC843126198C570049902E /* Views */,
@@ -632,6 +643,7 @@
 				93AC842D26198AB80049902E /* RoundedButtonView.swift in Sources */,
 				931C55E6269E4A4800146AFC /* Query.swift in Sources */,
 				93DC9116264200B6009598CB /* FauxTaskView.swift in Sources */,
+				93D62B2926B540F500C11AE6 /* UserView.swift in Sources */,
 				933A5067263FCC8100FFC164 /* DropViewDelegate.swift in Sources */,
 				937319E6264DC48F0036722F /* User.swift in Sources */,
 				931C55EE26A1418300146AFC /* AccessToken.swift in Sources */,

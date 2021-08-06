@@ -14,10 +14,10 @@ protocol Queryable: Equatable {
     /// The type of the fetched value
     associatedtype Value
     
-    /// Teh default value, used whenever the database is not available
+    /// The default value, used whenever the database is not available
     static var defaultValue: Value { get }
     
-    /// Fetches the database valeu
+    /// Fetches the database value
     func fetchValue(_ db: Database) throws -> Value
 }
 
@@ -25,7 +25,7 @@ protocol Queryable: Equatable {
 @propertyWrapper
 struct Query<Query: Queryable>: DynamicProperty {
     /// The database reader that makes it possible to observe the database
-    @Environment(\.appDatabase?.databaseReader) private var databaseReader: DatabaseReader?
+    @Environment(\.appDatabase.databaseReader) private var databaseReader: DatabaseReader
     @StateObject private var core = Core()
     private var baseQuery: Query
     
@@ -49,9 +49,10 @@ struct Query<Query: Queryable>: DynamicProperty {
     }
     
     func update() {
-        guard let databaseReader = databaseReader else {
-            fatalError("Attempting to use @Query without any database in the environment")
-        }
+        // this is now never nil?
+//        guard let databaseReader = databaseReader else {
+//            fatalError("Attempting to use @Query without any database in the environment")
+//        }
         // Feed core with the necessary information, and make sure tracking has started
         if core.usesBaseQuery { core.query = baseQuery }
         core.startTrackingIfNecessary(in: databaseReader)
